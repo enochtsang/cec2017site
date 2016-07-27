@@ -1,0 +1,94 @@
+html, body {
+    /* Html and body take up full space, makes sure header bar reaches edges */
+    padding: 0;
+    margin: 0;
+    height: 100%;
+
+    background-color: white;
+}
+
+body {
+    /* https://www.google.com/fonts#QuickUsePlace:quickUse */
+    /* Font linked in head of html */
+    font-family: 'Raleway', sans-serif;
+}
+
+a, a:visited, a:hover, a:active {
+    text-decoration: none; /* no underline */
+    color: black;
+}
+
+.major-container {
+    /*flex-flow: row wrap;*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em
+}
+
+.info-bar-div * {
+    margin: 0.5em 0;
+}
+
+#header-left-div p {
+    text-align: right;
+}
+
+#header-mid-div {
+    padding: 0 0.5em;
+}
+
+#header-logo {
+    height: 4em;
+    width: 4em;
+}
+
+#nav-bar ul {
+    list-style-type: none;
+}
+
+#nav-bar li {
+    display: inline-block;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+#nav-bar a:hover {
+    color: red;
+}
+
+.competitions-link:hover ~ hr {
+    margin-left: 15.2%;
+    width: 7.6em;
+}
+
+.sponsorship-link:hover ~ hr {
+    margin-left: 34.9%;
+    width: 7.2em;
+}
+
+.attending-link:hover ~ hr {
+    margin-left: 53.9%;
+    width: 5.9em;
+}
+
+.contact-us-link:hover ~ hr {
+    margin-left: 70.4%;
+    width: 6.3em;
+}
+
+.francais-link:hover ~ hr {
+    margin-left: 87.9%;
+    width: 4.9em;
+}
+
+
+hr {
+  height: .25rem;
+  width: 4.4em;
+  margin: 0.2em;
+  margin-left: 2%;
+  background: tomato;
+  border: none;
+  transition: .3s ease-in-out;
+}
