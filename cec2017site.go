@@ -15,23 +15,43 @@ func check(err error) {
     }
 }
 
+func absPath(relativePath string) string {
+    dir, err := filepath.Abs(filepath.Dir(os.Args[0]))
+    check(err)
+    result := path.Join(dir, relativePath)
+    log.Println("Created absPath " + result)
+    return result
+}
+
+func redirectToHome(w http.ResponseWriter, r *http.Request) {
+    http.Redirect(w, r, "/home", 301)
+}
+
 func home(w http.ResponseWriter, r *http.Request) {
-    t := template.Must(template.ParseFiles(path.Join(filepath.Dir(os.Args[0]), "templates/index.html")))
-    err := t.Execute(w, nil)
+    t := template.Must(template.ParseFiles(absPath("templates/base.html"), absPath("templates/home.html")))
+    err := t.ExecuteTemplate(w, "base", nil)
+    check(err)
+}
+
+func home_committee(w http.ResponseWriter, r *http.Request) {
+    t := template.Must(template.ParseFiles(absPath("templates/base.html"), absPath("templates/committee.html")))
+    err := t.ExecuteTemplate(w, "base", nil)
     check(err)
 }
 
 func faviconHandler(w http.ResponseWriter, r *http.Request) {
-    http.ServeFile(w, r, path.Join(filepath.Dir(os.Args[0]), "resources/images/favicon.ico"))
+    http.ServeFile(w, r, absPath("resources/images/favicon.ico"))
 }
 
 func main() {
-    http.HandleFunc("/", home)
-    http.Handle("/resources/", http.StripPrefix("/resources/",
-        http.FileServer(http.Dir(path.Join(filepath.Dir(os.Args[0]), "resources")))))
-    // http.HandleFunc("/favicon.ico", faviconHandler)
+    http.HandleFunc("/", redirectToHome)
+    http.HandleFunc("/home", home)
+    http.HandleFunc("/home/committee", home_committee)
+    http.Handle("/resources/", http.StripPrefix("/resources/", http.FileServer(http.Dir(absPath("resources")))))
+    http.HandleFunc("/favicon.ico", faviconHandler)
 
-    err := http.ListenAndServeTLS(":8443", "temp.crt", "temp.key", nil)
+    log.Println("CEC 2017 Site Running on 8443")
+    err := http.ListenAndServeTLS(":8443", absPath("temp.crt"), absPath("temp.key"), nil)
     if err != nil {
         log.Fatal("ListenAndServe: ", err)
     }

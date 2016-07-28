@@ -21,6 +21,7 @@ a, a:visited, a:hover, a:active {
     color: black;
 }
 
+/*** base.html ***/
 header > div {
     display: flex;
     align-items: center;
@@ -95,37 +96,6 @@ hr {
   transition: .3s ease-in-out;
 }
 
-.content {
-    flex: 1;
-}
-
-.content-splash {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-image: url("/resources/images/homebackdrop-placeholder.jpg");
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
-
-.content-splash img {
-    height: 8em;
-}
-
-.content-info {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.content-info > div {
-    margin: 4em;
-    width: 20em;
-}
-
 footer {
     display: flex;
     background: black;
@@ -140,3 +110,38 @@ footer > div {
 footer > div > p {
     padding: 0 0.2em;
 }
+
+.content {
+    flex: 1;
+    font-size: 1em;
+}
+
+/*** base.html ***/
+#home .content-splash {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url("/resources/images/homebackdrop-placeholder.jpg");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#home .content-splash img {
+    height: 8em;
+}
+
+#home .content-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#home .content-info > div {
+    margin: 4em;
+    width: 20em;
+}
+
+/*** committee.html ***/
