@@ -11,6 +11,9 @@ body {
     /* https://www.google.com/fonts#QuickUsePlace:quickUse */
     /* Font linked in head of html */
     font-family: 'Raleway', sans-serif;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
 }
 
 a, a:visited, a:hover, a:active {
@@ -18,8 +21,7 @@ a, a:visited, a:hover, a:active {
     color: black;
 }
 
-.major-container {
-    /*flex-flow: row wrap;*/
+header > div {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -91,4 +93,50 @@ hr {
   background: tomato;
   border: none;
   transition: .3s ease-in-out;
+}
+
+.content {
+    flex: 1;
+}
+
+.content-splash {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url("/resources/images/homebackdrop-placeholder.jpg");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.content-splash img {
+    height: 8em;
+}
+
+.content-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content-info > div {
+    margin: 4em;
+    width: 20em;
+}
+
+footer {
+    display: flex;
+    background: black;
+    color: white;
+}
+
+footer > div {
+    display: flex;
+    margin: 0 1em;
+}
+
+footer > div > p {
+    padding: 0 0.2em;
 }
