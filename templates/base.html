@@ -29,19 +29,46 @@
         <div id="nav-bar">
             <ul>
                 <li class="cec-2017-link">
-                    <a href="/">CEC 2017</a>
+                    <a href="/home">CEC 2017</a>
+                    <div class="nav-dropdown" id="home-dropdown">
+                        <a href="/home/committee">Planning Committee</a>
+                        <a href="/home/uofc">University of Calgary</a>
+                        <a href="/home/calgary">Calgary</a>
+                        <a href="/home/hotel">Hotel</a>
+                    </div>
                 </li>
                 <li class="competitions-link">
-                    <a href="/">COMPETITIONS</a>
+                    <a href="/competitions">COMPETITIONS</a>
+                    <div class="nav-dropdown" id="home-dropdown">
+                        <a href=/competitions/senior-design>Senior Design</a>
+                        <a href=/competitions/junior-design>Junior Design</a>
+                        <a href=/competitions/innovative-design>Innovative Design</a>
+                        <a href=/competitions/re-engineering>Re Engineering</a>
+                        <a href=/competitions/engineering-communication>Engineering Communication</a>
+                        <a href=/competitions/consulting>Consulting</a>
+                        <a href=/competitions/extemporaneous-debate>Extemporaneous Debate</a>
+                    </div>
                 </li>
                 <li class="sponsorship-link">
-                    <a href="/">SPONSORSHIP</a>
+                    <a href="/sponsorship/our-sponsors">SPONSORSHIP</a>
+                    <div class="nav-dropdown" id="home-dropdown">
+                        <a href="/sponsorship/our-sponsors">Our Sponsors</a>
+                        <a href="/sponsorship/sponsorship-package">Sponsorship Package</a>
+                    </div>
                 </li>
                 <li class="attending-link">
-                    <a href="/">ATTENDING</a>
+                    <a href="/attending">ATTENDING</a>
+                    <div class="nav-dropdown" id="home-dropdown">
+                        <a href="/attending">Planning Committee</a>
+                        <a href="/attending/registration-and-payment">Registration and Payment</a>
+                    </div>
                 </li>
                 <li class="contact-us-link">
-                    <a href="/">CONTACT US</a>
+                    <a href="/contact">CONTACT US</a>
+                    <div class="nav-dropdown" id="home-dropdown">
+                        <a href="/contact">Contact Us</a>
+                        <a href="/contact/faq">FAQ</a>
+                    </div>
                 </li>
                 <li class="francais-link">
                     <a href="/">FRANCAIS</a>
@@ -51,7 +78,7 @@
         </div>
     </header>
     <div class="content">
-    {{template "content"}}
+        {{template "content"}}
     </div>
     <footer>
         <div>

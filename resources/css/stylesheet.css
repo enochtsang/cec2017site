@@ -60,6 +60,32 @@ header > div {
     color: red;
 }
 
+.nav-dropdown {
+    display: none;
+    margin-top: -1em;
+    padding-top: 2em;
+    position: absolute;
+    min-width: 160px;
+    animation: fadeinout 3s linear forwards;
+}
+
+.nav-dropdown a {
+    color: black;
+    background-color: #f9f9f9;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    animation: fadeinout 3s linear forwards;
+}
+
+#nav-bar li:hover .nav-dropdown {
+    display: block;
+}
+
+#nav-bar .nav-dropdown:hover {
+    display: block;
+}
+
 .competitions-link:hover ~ hr {
     margin-left: 15.2%;
     width: 7.6em;
