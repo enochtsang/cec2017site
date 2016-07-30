@@ -82,6 +82,7 @@ header > div {
     position: absolute;
     min-width: 160px;
     animation: fadeinout 3s linear forwards;
+    z-index: 99;
 }
 
 .nav-dropdown a {
@@ -300,6 +301,70 @@ footer > div > p {
 
 .hotel-content > div {
     margin: 2rem;
+}
+
+/*** competitions.html ***/
+
+.competitions {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
+.competitions-nav ul {
+    list-style-type: none;
+    margin: 0;
+}
+
+.competitions-nav li {
+    padding: 0.3rem;
+}
+
+.competitions-nav li:hover {
+    color: lightblue;
+    cursor: pointer;
+}
+
+.competition-nav-border {
+    width: 3px;
+    margin: 0 1rem;
+    background: black;
+    background: -webkit-linear-gradient(white, black, white);
+    background: -o-linear-gradient(white, black, white);
+    background: -moz-linear-gradient(white, black, white);
+    background: linear-gradient(white, black, white);
+}
+
+.competition-info-container {
+    width: 38rem;
+    padding: 0;
+    position: relative;
+}
+
+.competition-info {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.competition-splash {
+    background-image: url("/resources/images/backdrop-placeholder.jpg");
+    height: 20rem;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.competition-splash h2 {
+    padding: 1.5rem;
+    margin: 0;
+    font-size: 2em;
+}
+
+.competition-blurb {
+    padding-top: 1rem;
 }
 
 /*** didyouknow.html ***/

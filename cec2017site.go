@@ -9,8 +9,15 @@ import (
     "path/filepath"
 )
 
+type Competition struct {
+    ID    string
+    Title string
+    Blurb string
+}
+
 func check(err error) {
     if err != nil {
+        panic(err)
         log.Fatal(err)
     }
 }
@@ -72,6 +79,64 @@ func home_hotel(w http.ResponseWriter, r *http.Request) {
     check(err)
 }
 
+func competitions(w http.ResponseWriter, r *http.Request) {
+    t := template.Must(template.ParseFiles(
+        absPath("templates/base.html"),
+        absPath("templates/competitions.html")))
+    blurb :=
+        `skdjfskfjsdkldsklfjsdklfj
+    skdjfskfjsdkldsklfjsdklfj
+    skdjfskfjsdkldsklfjsdklfj
+    skdjfskfjsdkldsklfjsdklfj
+    skdjfskfjsdkldsklfjsdklfj
+    skdjfskfjsdkldsklfjsdklfj`
+
+    competitions := []Competition{
+        {
+            ID:    "competitions-general",
+            Title: "General",
+            Blurb: blurb,
+        },
+        {
+            ID:    "senior-design",
+            Title: "Senior Design",
+            Blurb: blurb,
+        },
+        {
+            ID:    "junior-design",
+            Title: "Junior Design",
+            Blurb: blurb,
+        },
+        {
+            ID:    "innovative-design",
+            Title: "Innovative Design",
+            Blurb: blurb,
+        },
+        {
+            ID:    "re-engineering",
+            Title: "Re Engineering",
+            Blurb: blurb,
+        },
+        {
+            ID:    "engineering-communication",
+            Title: "Engineering Communication",
+            Blurb: blurb,
+        },
+        {
+            ID:    "consulting",
+            Title: "Consulting",
+            Blurb: blurb,
+        },
+        {
+            ID:    "extemporaneous-debate",
+            Title: "Extemporaneous Debate",
+            Blurb: blurb,
+        },
+    }
+    err := t.ExecuteTemplate(w, "base", competitions)
+    check(err)
+}
+
 func faviconHandler(w http.ResponseWriter, r *http.Request) {
     http.ServeFile(w, r, absPath("resources/images/favicon.ico"))
 }
@@ -83,6 +148,7 @@ func main() {
     http.HandleFunc("/home/uofc", home_uofc)
     http.HandleFunc("/home/calgary", home_calgary)
     http.HandleFunc("/home/hotel", home_hotel)
+    http.HandleFunc("/competitions", competitions)
     http.Handle("/resources/", http.StripPrefix("/resources/", http.FileServer(http.Dir(absPath("resources")))))
     http.HandleFunc("/favicon.ico", faviconHandler)
 

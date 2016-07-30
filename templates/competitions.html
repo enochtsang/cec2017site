@@ -1,0 +1,25 @@
+{{define "content"}}
+<script type="text/javascript" src="/resources/js/competitions.js"></script>
+<div class="competitions">
+    <div class="competitions-nav">
+        <ul>
+            {{range .}}
+            <li value={{.ID}}>{{.Title}}</li>
+            {{end}}
+        </ul>
+    </div>
+    <div class="competition-nav-border"></div>
+    <div class="competition-info-container">
+        {{range .}}
+        <div class="competition-info {{.ID}}">
+            <div class="competition-splash">
+                <h2>{{.Title}}</h2>
+            </div>
+            <div class="competition-blurb">
+                <p>{{.Blurb}}</p>
+            </div>
+        </div>
+        {{end}}
+    </div>
+</div>
+{{end}}
