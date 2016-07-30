@@ -28,13 +28,27 @@ func redirectToHome(w http.ResponseWriter, r *http.Request) {
 }
 
 func home(w http.ResponseWriter, r *http.Request) {
-    t := template.Must(template.ParseFiles(absPath("templates/base.html"), absPath("templates/home.html")))
+    t := template.Must(template.ParseFiles(
+        absPath("templates/base.html"),
+        absPath("templates/home.html")))
     err := t.ExecuteTemplate(w, "base", nil)
     check(err)
 }
 
 func home_committee(w http.ResponseWriter, r *http.Request) {
-    t := template.Must(template.ParseFiles(absPath("templates/base.html"), absPath("templates/committee.html")))
+    t := template.Must(template.ParseFiles(
+        absPath("templates/base.html"),
+        absPath("templates/committee.html")))
+    err := t.ExecuteTemplate(w, "base", nil)
+    check(err)
+}
+
+func home_uofc(w http.ResponseWriter, r *http.Request) {
+    t := template.Must(template.ParseFiles(
+        absPath("templates/base.html"),
+        absPath("templates/uofc.html"),
+        absPath("templates/widgets/didyouknow.html"),
+        absPath("templates/widgets/location.html")))
     err := t.ExecuteTemplate(w, "base", nil)
     check(err)
 }
@@ -47,6 +61,7 @@ func main() {
     http.HandleFunc("/", redirectToHome)
     http.HandleFunc("/home", home)
     http.HandleFunc("/home/committee", home_committee)
+    http.HandleFunc("/home/uofc", home_uofc)
     http.Handle("/resources/", http.StripPrefix("/resources/", http.FileServer(http.Dir(absPath("resources")))))
     http.HandleFunc("/favicon.ico", faviconHandler)
 
