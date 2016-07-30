@@ -277,6 +277,31 @@ footer > div > p {
     margin: 2rem;
 }
 
+
+/*** hotel.html ***/
+
+.hotel-splash {
+    background-image: url("/resources/images/backdrop-placeholder.jpg");
+}
+
+.hotel-splash img {
+    width: 20rem;
+}
+
+.hotel-info p {
+    margin-top: 5em;
+    margin-left: 5em;
+}
+
+.hotel-content {
+    flex-direction: column;
+    margin: 3rem;
+}
+
+.hotel-content > div {
+    margin: 2rem;
+}
+
 /*** didyouknow.html ***/
 
 .didyouknow {
