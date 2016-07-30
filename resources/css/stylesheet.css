@@ -253,6 +253,30 @@ footer > div > p {
     margin: 2rem;
 }
 
+/*** calgary.html ***/
+
+.calgary-splash {
+    background-image: url("/resources/images/backdrop-placeholder.jpg");
+}
+
+.calgary-splash img {
+    height: 20rem;
+}
+
+.calgary-info p {
+    margin-top: 5em;
+    margin-left: 5em;
+}
+
+.calgary-content {
+    flex-direction: column;
+    margin: 3rem;
+}
+
+.calgary-content > div {
+    margin: 2rem;
+}
+
 /*** didyouknow.html ***/
 
 .didyouknow {

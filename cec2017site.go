@@ -53,6 +53,16 @@ func home_uofc(w http.ResponseWriter, r *http.Request) {
     check(err)
 }
 
+func home_calgary(w http.ResponseWriter, r *http.Request) {
+    t := template.Must(template.ParseFiles(
+        absPath("templates/base.html"),
+        absPath("templates/calgary.html"),
+        absPath("templates/widgets/didyouknow.html"),
+        absPath("templates/widgets/location.html")))
+    err := t.ExecuteTemplate(w, "base", nil)
+    check(err)
+}
+
 func faviconHandler(w http.ResponseWriter, r *http.Request) {
     http.ServeFile(w, r, absPath("resources/images/favicon.ico"))
 }
@@ -62,6 +72,7 @@ func main() {
     http.HandleFunc("/home", home)
     http.HandleFunc("/home/committee", home_committee)
     http.HandleFunc("/home/uofc", home_uofc)
+    http.HandleFunc("/home/calgary", home_calgary)
     http.Handle("/resources/", http.StripPrefix("/resources/", http.FileServer(http.Dir(absPath("resources")))))
     http.HandleFunc("/favicon.ico", faviconHandler)
 
