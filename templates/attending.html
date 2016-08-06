@@ -1,0 +1,29 @@
+{{define "content"}}
+<script type="text/javascript" src="/resources/lib/pdfobject.min.js"></script>
+<script type="text/javascript" src="/resources/js/attending.js"></script>
+<div class="attending">
+    <h1>ATTENDING</h1>
+    <p>
+        This is a blurb about the attending.
+        The quick brown fox jumps over the lazy dog.
+        The quick brown fox jumps over the lazy dog.
+        The quick brown fox jumps over the lazy dog.
+        The quick brown fox jumps over the lazy dog.
+        The quick brown fox jumps over the lazy dog.
+        The quick brown fox jumps over the lazy dog.
+    </p>
+    <h2 class="delegate-package-label pdf-label">
+        <img src="/resources/images/arrow-placeholder.png" alt="arrow" class="dropdown-arrow"/>
+        Delegate Package
+    </h2>
+    <div id="delegate-package-pdf"></div>
+    <script>PDFObject.embed("/resources/hosted-files/placeholder.pdf", "#delegate-package-pdf");</script>
+
+    <h2 class="official-rulebook-label pdf-label">
+        <img src="/resources/images/arrow-placeholder.png" alt="arrow" class="dropdown-arrow"/>
+        Official Rulebook
+    </h2>
+    <div id="official-rulebook-pdf"></div>
+    <script>PDFObject.embed("/resources/hosted-files/placeholder.pdf", "#official-rulebook-pdf");</script>
+</div>
+{{end}}

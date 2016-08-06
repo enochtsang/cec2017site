@@ -40,6 +40,11 @@ a, a:visited, a:hover, a:active {
     height: 20rem;
 }
 
+.pdf-label:hover {
+    color: red;
+    cursor: pointer;
+}
+
 /*** base.html ***/
 
 header {
@@ -319,7 +324,7 @@ footer > div > p {
 }
 
 .competitions-nav li:hover {
-    color: lightblue;
+    color: red;
     cursor: pointer;
 }
 
@@ -421,6 +426,36 @@ footer > div > p {
 #sponsorship-package-pdf {
     width: 40rem;
     height: 54rem;
+}
+
+/*** attending.html ***/
+
+.attending {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 50%;
+    min-width: 50rem;
+    padding-bottom: 1rem;
+}
+
+.attending .dropdown-arrow {
+    margin: auto;
+    height: 1.5rem;
+    -webkit-transition: transform 0.1s; /* Transform edited in attending.js */
+    transition: transform 0.1s;
+}
+
+#delegate-package-pdf {
+    width: 40rem;
+    height: 54rem;
+    display: none;
+}
+
+#official-rulebook-pdf {
+    width: 40rem;
+    height: 54rem;
+    display: none;
 }
 
 /*** didyouknow.html ***/
