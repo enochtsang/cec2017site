@@ -1,0 +1,37 @@
+{{define "content"}}
+<script src='https://www.google.com/recaptcha/api.js'></script>
+<script type="text/javascript" src="/resources/js/contact.js"></script>
+<div class="contact-splash content-splash flex">
+    <div class="splash-info">
+        <p>
+            Some shit about happy to hear from you.
+            blah blah blah.
+            Have you checked out the <a href="/contact/faq">FAQ</a>?
+            Use the contact form.
+            The quick brown fox jumps over the lazy dog.
+            The quick brown fox jumps over the lazy dog.
+            The quick brown fox jumps over the lazy dog.
+        </p>
+    </div>
+</div>
+<div class="contact-content flex">
+    <h1>Contact Form</h1>
+    <div class="contact-form-wrapper">
+        <form class="contact-form">
+            <label for="name">Name</label>
+            <input type="text" name="name">
+            <label for="name">School or Organization</label>
+            <input type="text" name="school-organization">
+            <label for="name">Return Email</label>
+            <input type="email" name="return-email">
+            <label for="name">Message</label>
+            <textarea name="message" rows=10 cols=50></textarea>
+            <div class="g-recaptcha" data-sitekey="6Lce7SYTAAAAAIrX7phaDRlvkkJDzmzHWcGhS1GN"></div>
+            <input type="submit" name="Submit">
+        </form>
+        <div class="contact-sent">
+            Thanks for contacting us, we'll get back to you soon!
+        </div>
+    </div>
+</div>
+{{end}}

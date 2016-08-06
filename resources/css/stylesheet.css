@@ -458,6 +458,52 @@ footer > div > p {
     display: none;
 }
 
+/*** contact.html ***/
+
+.contact-splash {
+    background-image: url("/resources/images/backdrop-placeholder.jpg");
+    font-size: 1.5rem;
+}
+
+.contact-splash a {
+    color: green;
+}
+
+
+.contact-splash a:hover {
+    color: red;
+}
+
+.contact-content {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 50%;
+    min-width: 50rem;
+    padding-bottom: 1rem;
+}
+
+.contact-form-wrapper {
+    height: 30rem;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form * {
+    margin-bottom: 0.5rem;
+}
+
+.contact-form input[type="submit"] {
+    width: 6rem;
+}
+
+.contact-sent {
+    display: none;
+}
+
 /*** didyouknow.html ***/
 
 .didyouknow {
