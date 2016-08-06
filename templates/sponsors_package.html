@@ -1,0 +1,18 @@
+{{define "content"}}
+<div class="sponsor-package flex">
+    <script type="text/javascript" src="/resources/lib/pdfobject.min.js"></script>
+    <h1>Interested in sponsoring?</h1>
+    <p>
+        This is a blurb about the the sponsorship package.
+        The quick brown fox jumps over the lazy dog.
+        The quick brown fox jumps over the lazy dog.
+        The quick brown fox jumps over the lazy dog.
+        The quick brown fox jumps over the lazy dog.
+        The quick brown fox jumps over the lazy dog.
+        The quick brown fox jumps over the lazy dog.
+    </p>
+    <h2>Sponsorship Package</h2>
+    <div id="sponsorship-package-pdf"></div>
+    <script>PDFObject.embed("/resources/hosted-files/placeholder.pdf", "#sponsorship-package-pdf");</script>
+</div>
+{{end}}
