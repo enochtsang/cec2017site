@@ -504,6 +504,22 @@ footer > div > p {
     display: none;
 }
 
+/*** faq.html ***/
+
+.faq {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 50%;
+    min-width: 50rem;
+    padding-bottom: 1rem;
+}
+
+.faq h1 {
+    text-align: left;
+}
+
 /*** didyouknow.html ***/
 
 .didyouknow {
