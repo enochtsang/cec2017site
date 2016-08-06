@@ -137,6 +137,14 @@ func competitions(w http.ResponseWriter, r *http.Request) {
     check(err)
 }
 
+func sponsors(w http.ResponseWriter, r *http.Request) {
+    t := template.Must(template.ParseFiles(
+        absPath("templates/base.html"),
+        absPath("templates/sponsors.html")))
+    err := t.ExecuteTemplate(w, "base", nil)
+    check(err)
+}
+
 func faviconHandler(w http.ResponseWriter, r *http.Request) {
     http.ServeFile(w, r, absPath("resources/images/favicon.ico"))
 }
@@ -149,6 +157,7 @@ func main() {
     http.HandleFunc("/home/calgary", home_calgary)
     http.HandleFunc("/home/hotel", home_hotel)
     http.HandleFunc("/competitions", competitions)
+    http.HandleFunc("/sponsors", sponsors)
     http.Handle("/resources/", http.StripPrefix("/resources/", http.FileServer(http.Dir(absPath("resources")))))
     http.HandleFunc("/favicon.ico", faviconHandler)
 
