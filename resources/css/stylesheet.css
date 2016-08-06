@@ -42,6 +42,10 @@ a, a:visited, a:hover, a:active {
 
 /*** base.html ***/
 
+header {
+    border-bottom: 2px solid black;
+}
+
 header > div {
     font-size: 1.5rem;
 }
@@ -302,6 +306,7 @@ footer > div > p {
     display: flex;
     justify-content: center;
     margin: auto;
+    margin-top: 1rem;
 }
 
 .competitions-nav ul {
