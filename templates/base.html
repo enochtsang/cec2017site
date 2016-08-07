@@ -2,7 +2,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
+    <meta http-equiv="content-type" content="text/ html;charset=utf-8" />
     <title>CEC 2017</title>
     <!-- https://www.google.com/fonts#QuickUsePlace:quickUse -->
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
@@ -13,35 +13,37 @@
 </head>
 <body>
     <header>
-        <div id="info-bar" class="flex">
-            <div class="info-bar-div" id="header-left-div">
-                <p>CANADIAN ENGINEERING</p>
-                <p>COMPETITION 2017</p>
+        <div class="info-bar flex">
+            <div>
+                CANADIAN ENGINEERING
+                <hr>
+                COMPETITION 2017
             </div>
-            <div class="info-bar-div" id="header-mid-div">
-                <a href="/">
-                    <img src="/resources/images/placeholder-logo.png" alt="CEC2017 Logo" class="cec2017-logo" id="header-logo" />
+            <div>
+                <a href="/home">
+                    <img src="/resources/images/placeholder-logo.png" alt="CEC2017 Logo" class="header-logo" />
                 </a>
             </div>
-            <div class="info-bar-div" id="header-right-div">
-                <p>June 7 2017 - June 13 2017</p>
-                <p>CALGARY, AB</p>
+            <div>
+                June 7 2017 - June 13 2017
+                <hr>
+                CALGARY, AB
             </div>
         </div>
-        <div id="nav-bar" class="flex">
-            <ul>
-                <li class="cec2017-link">
+        <div class="nav-bar">
+            <ul class="flex">
+                <li>
                     <a href="/home">CEC 2017</a>
-                    <div class="nav-dropdown" id="home-dropdown">
+                    <div class="nav-dropdown">
                         <a href="/home/committee">Planning Committee</a>
                         <a href="/home/uofc">University of Calgary</a>
                         <a href="/home/calgary">Calgary</a>
                         <a href="/home/hotel">Hotel</a>
                     </div>
                 </li>
-                <li class="competitions-link">
+                <li>
                     <a href="/competitions?competitions-general">COMPETITIONS</a>
-                    <div class="nav-dropdown" id="home-dropdown">
+                    <div class="nav-dropdown">
                         <a href="/competitions?senior-design">Senior Design</a>
                         <a href="/competitions?junior-design">Junior Design</a>
                         <a href="/competitions?innovative-design">Innovative Design</a>
@@ -51,19 +53,19 @@
                         <a href="/competitions?extemporaneous-debate">Extemporaneous Debate</a>
                     </div>
                 </li>
-                <li class="sponsorship-link">
+                <li>
                     <a href="/sponsors">SPONSORSHIP</a>
-                    <div class="nav-dropdown" id="home-dropdown">
+                    <div class="nav-dropdown">
                         <a href="/sponsors">Our Sponsors</a>
                         <a href="/sponsors/package">Sponsorship Package</a>
                     </div>
                 </li>
-                <li class="attending-link">
+                <li>
                     <a href="/attending">ATTENDING</a>
                 </li>
-                <li class="contact-us-link">
+                <li>
                     <a href="/contact">CONTACT US</a>
-                    <div class="nav-dropdown" id="home-dropdown">
+                    <div class="nav-dropdown">
                         <a href="/contact?contact">Contact Us</a>
                         <a href="/contact/faq">FAQ</a>
                     </div>
@@ -74,9 +76,7 @@
             </ul>
         </div>
     </header>
-    <div class="content">
-        {{template "content" .}}
-    </div>
+    {{template "content" .}}
     <footer>
         <div>
             <p>Email</p><p>christinecao@fixthis.com</p>

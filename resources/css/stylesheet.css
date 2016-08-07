@@ -4,40 +4,45 @@ html, body {
 }
 
 html {
-    position: relative;
     min-height: 100%;
+    position: relative;
 }
 
 body {
     /* https://www.google.com/fonts#QuickUsePlace:quickUse */
     /* Font linked in head of html */
-    margin: 0 0 3rem;
-    font-family: 'Raleway', sans-serif;
     flex-direction: column;
+    font-family: 'Raleway', sans-serif;
+    margin: 0 0 3rem;
 }
 
 a, a:visited, a:hover, a:active {
-    text-decoration: none; /* no underline */
     color: black;
+    text-decoration: none; /* no underline */
+}
+
+h3 {
+    font-size: 1.3rem;
+    margin: 0.5rem 0;
 }
 
 .flex {
-    display: flex;
     align-items: center;
+    display: flex;
     justify-content: center;
 }
 
 .content-splash {
-    -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
+    -webkit-background-size: cover;
     background-size: cover;
     padding: 2rem;
 }
 
 .splash-info {
-    max-width: 50vh;
     height: 20rem;
+    max-width: 50vh;
 }
 
 .pdf-label:hover {
@@ -52,83 +57,101 @@ header {
 }
 
 header > div {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
 }
 
-.info-bar-div * {
-    margin: 0.5em 0;
+.info-bar > div {
+    margin-top: 1.5rem;
 }
 
-#header-left-div p {
+.info-bar > div hr {
+    visibility: hidden;
+    margin: 0.2rem 0;
+}
+
+.info-bar > div:first-child {
     text-align: right;
 }
 
-#header-mid-div {
-    padding: 0 0.5rem;
+.info-bar > div:nth-child(2) {
+    padding: 0 1rem;
 }
 
-#header-logo {
+.header-logo {
     height: 4rem;
     width: 4rem;
 }
 
-#nav-bar ul {
+.nav-bar ul {
     list-style-type: none;
+    padding-left: 0;
+    flex-wrap: wrap;
 }
 
-#nav-bar li {
+.nav-bar li {
     display: inline-block;
     padding-left: 1rem;
     padding-right: 1rem;
+    margin-bottom: 1rem;
 }
 
-#nav-bar a:hover {
-    color: red;
-    -webkit-transition: color 0.2s;
+.nav-bar a {
+    font-size: 1.5rem;
+
     transition: color 0.2s;
+    -webkit-transition: color 0.2s;
+    -o-transition:  color 0.2s;;
+    -moz-transition:  color 0.2s;;
+}
+
+.nav-bar a:hover {
+    color: red;
+
+    transition: color 0.2s;
+    -webkit-transition: color 0.2s;
+    -o-transition:  color 0.2s;;
+    -moz-transition:  color 0.2s;;
 }
 
 .nav-dropdown {
     display: none;
     margin-top: 0;
+    min-width: 160px;
     padding-top: 1rem;
     position: absolute;
-    min-width: 160px;
     z-index: 99;
 }
 
 .nav-dropdown a {
-    color: white;
-    background-color: black;
-    padding: 12px 16px;
-    text-decoration: none;
     display: block;
+    padding: 12px 16px;
+
+    background-color: black;
     border: 1px solid grey;
-    font-size: 0.9em;
+    color: white;
+    font-size: 0.8em;
+    text-decoration: none;
 }
 
-#nav-bar .nav-dropdown a:hover {
+.nav-dropdown a:hover {
     color: lightgrey;
 }
 
-#nav-bar .nav-dropdown:hover {
+.nav-dropdown:hover {
     display: block;
 }
 
-.content {
-    font-size: 1rem;
-}
-
 footer {
-    position: absolute;
-    left: 0;
     bottom: 0;
-    width: 100%;
-    height: 3rem;
     display: flex;
+    height: 3rem;
+    left: 0;
+    margin-top: auto;
+    position: absolute;
+    width: 100%;
+
     background: black;
     color: white;
-    margin-top: auto;
 }
 
 footer > div {
@@ -145,43 +168,30 @@ footer > div > p {
 /*** home.html ***/
 
 .home-splash {
-    flex-direction: column;
     background-image: url("/resources/images/backdrop-placeholder.jpg");
+    flex-direction: column;
 }
 
 .home-splash img {
     height: 8rem;
 }
 
-#home .content-info > div {
+.home .content-info > div {
     margin: 4rem;
     width: 20rem;
 }
 
 /*** committee.html ***/
 
-.directors-bar {
-    color: white;
-    background: black;
-    padding: 0.1rem 2rem;
-}
-
-.directors-main {
+.directors-splash {
     background-image: url("/resources/images/backdrop-placeholder.jpg");
-    padding: 0rem 5rem;
+    padding: 3rem 5rem;
 }
 
-.directors-main > div{
-    margin: 3em;
-}
-
-.directors-img-main {
+.directors-splash img {
     height: 20rem;
-}
-
-.directors-info h2 {
-    font-size: 1.3rem;
-    margin: 0.5rem 0;
+    margin-right: 4rem;
+    border: 2px solid grey;
 }
 
 .directors-listing {
@@ -191,50 +201,55 @@ footer > div > p {
 
 .directors-mini {
     padding: 0.5rem 1rem;
-}
-
-.directors-mini {
-    margin: 4rem;
-    margin-bottom: 0;
+    margin: 4rem 4rem 0 4rem; /* bottom 0 */
 }
 
 .directors-mini-title {
+    left: -3rem;
     margin: 0;
-    background: pink;
     padding: 0.5rem 1rem;
     position: relative;
-    left: -3rem;
     top: 1rem;
+
+    background: pink;
 }
 
 .directors-mini img {
-    height: 12rem;
     border: 0.5rem solid black;
-    -webkit-transition: .2s;
+    height: 12rem;
+
     transition: .2s;
+    -webkit-transition: .2s;
+    -o-transition:  .2s;;
+    -moz-transition:  .2s;;
 }
 
 .directors-mini img:hover {
     border: 0.5rem solid orange;
-    -webkit-transition: .2s;
+    cursor: pointer;
+
     transition: .2s;
+    -webkit-transition: .2s;
+    -o-transition:  .2s;;
+    -moz-transition:  .2s;;
 }
 
 .directors-mini-name {
-    text-align: left;
+    bottom: 2rem;
     margin: 0;
     padding: 0.5rem 1rem;
     position: relative;
     right: -2rem;
-    bottom: 2rem;
+
     display: flex;
     justify-content: flex-end;
+    text-align: left;
 }
 
 .directors-mini-name h2 {
     background: pink;
-    padding: 0.5rem 1rem;
     margin: 0;
+    padding: 0.5rem 1rem;
 }
 
 /*** uofc.html ***/
@@ -271,8 +286,8 @@ footer > div > p {
 }
 
 .calgary-info p {
-    margin-top: 5em;
     margin-left: 5em;
+    margin-top: 5em;
 }
 
 .calgary-content {
@@ -296,8 +311,8 @@ footer > div > p {
 }
 
 .hotel-info p {
-    margin-top: 5em;
     margin-left: 5em;
+    margin-top: 5em;
 }
 
 .hotel-content {
@@ -315,7 +330,7 @@ footer > div > p {
     display: flex;
     justify-content: center;
     margin: auto;
-    margin-top: 1rem;
+    margin-top: 2rem;
 }
 
 .competitions-nav ul {
@@ -333,41 +348,41 @@ footer > div > p {
 }
 
 .competition-nav-border {
-    width: 3px;
-    margin: 0 1rem;
-    background: black;
-    background: -webkit-linear-gradient(white, black, white);
-    background: -o-linear-gradient(white, black, white);
     background: -moz-linear-gradient(white, black, white);
+    background: -o-linear-gradient(white, black, white);
+    background: -webkit-linear-gradient(white, black, white);
+    background: black;
     background: linear-gradient(white, black, white);
+    margin: 0 1rem;
+    width: 3px;
 }
 
 .competition-info-container {
-    width: 38rem;
     padding: 0;
     position: relative;
+    width: 38rem;
 }
 
 .competition-info {
     display: none;
+    left: 0;
     position: absolute;
     top: 0;
-    left: 0;
 }
 
 .competition-splash {
-    background-image: url("/resources/images/backdrop-placeholder.jpg");
-    height: 20rem;
-    -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
+    -webkit-background-size: cover;
+    background-image: url("/resources/images/backdrop-placeholder.jpg");
     background-size: cover;
+    height: 20rem;
 }
 
 .competition-splash h2 {
-    padding: 1.5rem;
-    margin: 0;
     font-size: 2em;
+    margin: 0;
+    padding: 1.5rem;
 }
 
 .competition-blurb {
@@ -376,12 +391,24 @@ footer > div > p {
 
 /*** sponsors.html ***/
 
-.sponsors-jumbotron h1 {
-    text-align: center;
-    color: white;
-    background: black;
+.sponsors h1 {
     margin: 0;
-    padding: 1rem;
+    padding: 1rem 1rem 0.5rem 1rem;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.sponsors h1:first-child {
+    padding: 0;
+    margin-top: 0;
+}
+
+.sponsors h1 + hr {
+    border: 0;
+    height: 2px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    width: 80%
+
 }
 
 .sponsors-container {
@@ -390,6 +417,7 @@ footer > div > p {
 
 .lead-sponsors {
     background-image: url("/resources/images/backdrop-placeholder.jpg");
+    padding
 }
 
 .lead-sponsors img {
@@ -409,22 +437,27 @@ footer > div > p {
 
 .bronze-sponsors {
     font-size: 0.8rem;
-    margin: 1 2 3rem 4rem;
 }
 
 .bronze-sponsors img {
     height: 1rem;
     margin: 0.3rem;
+    margin-left: 4rem;
+}
+
+.bronze-sponsors img:first-child {
+    margin-left: 0.3rem;
 }
 
 /*** sponsor_package.html ***/
 
 .sponsor-package {
+    display: flex;
     flex-direction: column;
     margin: auto;
-    width: 50%;
     min-width: 50rem;
     padding-bottom: 1rem;
+    width: 50%;
 }
 
 #sponsorship-package-pdf {
@@ -438,15 +471,17 @@ footer > div > p {
     display: flex;
     flex-direction: column;
     margin: auto;
-    width: 50%;
     min-width: 50rem;
     padding-bottom: 1rem;
+    width: 50%;
 }
 
 .attending .dropdown-arrow {
-    margin: auto;
-    height: 1.5rem;
     -webkit-transition: transform 0.1s; /* Transform edited in attending.js */
+    -o-transition:  transform 0.1s; /* Transform edited in attending.js */;
+    -moz-transition:  transform 0.1s; /* Transform edited in attending.js */;
+    height: 1.5rem;
+    margin: auto;
     transition: transform 0.1s;
 }
 
@@ -482,9 +517,9 @@ footer > div > p {
     display: flex;
     flex-direction: column;
     margin: auto;
-    width: 50%;
     min-width: 50rem;
     padding-bottom: 1rem;
+    width: 50%;
 }
 
 .contact-form-wrapper {
@@ -511,17 +546,13 @@ footer > div > p {
 /*** faq.html ***/
 
 .faq {
-    text-align: center;
     display: flex;
     flex-direction: column;
     margin: auto;
-    width: 50%;
     min-width: 50rem;
     padding-bottom: 1rem;
-}
-
-.faq h1 {
-    text-align: left;
+    text-align: center;
+    width: 20%;
 }
 
 /*** didyouknow.html ***/
@@ -533,11 +564,11 @@ footer > div > p {
 }
 
 .dyk-title {
-    margin: 0;
     background: pink;
+    left: -3rem;
+    margin: 0;
     padding: 0.5rem 1rem;
     position: relative;
-    left: -3rem;
     top: -2rem;
 }
 
@@ -546,11 +577,11 @@ footer > div > p {
 }
 
 .didyouknow img:first-child {
+    -ms-filter: "FlipH";
     -o-transform: scaleX(-1);
     -webkit-transform: scaleX(-1);
-    transform: scaleX(-1);
     filter: FlipH;
-    -ms-filter: "FlipH";
+    transform: scaleX(-1);
 }
 
 .dyk-icon {
@@ -562,6 +593,7 @@ footer > div > p {
 
 .location {
     background: lightblue;
+    padding-bottom: 0.9rem;
 }
 
 .location img {
@@ -570,10 +602,10 @@ footer > div > p {
 }
 
 .location-title {
-    margin: 0;
     background: pink;
+    left: -3rem;
+    margin: 0;
     padding: 0.5rem 1rem;
     position: relative;
-    left: -3rem;
     top: -2rem;
 }
