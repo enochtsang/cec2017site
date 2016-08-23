@@ -190,6 +190,17 @@ footer > div > p {
     width: 20rem;
 }
 
+@media screen and (max-width: 1080px) {
+    .home .content-info {
+        flex-direction: column;
+    }
+
+    .home .content-info > div {
+        width: 80%;
+    }
+}
+
+
 /*** committee.html ***/
 
 .directors-splash {
