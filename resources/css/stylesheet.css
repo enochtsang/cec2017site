@@ -162,6 +162,16 @@ footer {
     color: white;
 }
 
+@media screen and (max-width: 1080px) {
+    footer {
+        height: 7rem;
+        font-size: 2em;
+        align-items: center;
+        display: flex;
+        justify-content: space-around;
+    }
+}
+
 footer > div {
     display: flex;
     margin: 0 1rem;
