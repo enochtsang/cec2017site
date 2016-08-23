@@ -1,7 +1,7 @@
 $(document).ready(function(){
-    $(document).on('submit', '.contact-form', function() {
-        $('.contact-form').fadeOut(function() {
-            $('.contact-sent').delay(500).fadeIn();
+    $(document).on('click', 'input[type=submit]', function() {
+        $('input[type=submit]').fadeOut(function() {
+            $('.contact-sent').fadeIn();
         });
         return false;
     })

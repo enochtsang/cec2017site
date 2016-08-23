@@ -10,5 +10,5 @@ $(document).ready(function(){
     var loc = window.location.pathname;
     var dir = loc.substring(1, loc.length) + "/";
     dir = dir.substring(0, dir.indexOf("/"));
-    $(".nav-bar a[href=\"/" + dir + "\"").css("color", "red");
+    $(".nav-bar a[href=\"/" + dir + "\"").css("color", "#F20");
 });

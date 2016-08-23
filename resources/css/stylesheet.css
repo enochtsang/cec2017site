@@ -39,7 +39,7 @@ h3 {
     -webkit-background-size: cover;
     background-size: cover;
     padding: 2rem;
-    height: 30rem;
+    height: 35rem;
 }
 
 .splash-info {
@@ -54,6 +54,11 @@ h3 {
 }
 
 /*** base.html ***/
+
+header {
+    background-image: linear-gradient(to top, black, #222);
+    color: white;
+}
 
 header > div {
     font-family: 'Oxygen', sans-serif;
@@ -91,7 +96,7 @@ header > div {
     border: 0;
     height: 2.5px;
     margin: 0;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0))
+    background-image: linear-gradient(to right, #111, white, #111);
 }
 
 @media(max-width: 1080px) {
@@ -104,7 +109,8 @@ header > div {
     list-style-type: none;
     padding-left: 0;
     flex-wrap: wrap;
-    margin: 0.7rem;
+    margin: 0;
+    padding: 0.7rem;
 }
 
 .nav-bar li {
@@ -114,6 +120,7 @@ header > div {
 }
 
 .nav-bar a {
+    color: white;
     font-size: 1.2rem;
 
     transition: color 0.2s;
@@ -123,7 +130,7 @@ header > div {
 }
 
 .nav-bar a:hover {
-    color: red;
+    color: #F20;
 
     transition: color 0.2s;
     -webkit-transition: color 0.2s;
@@ -146,7 +153,7 @@ header > div {
 
     background-color: black;
     border-bottom: 1px solid #444;
-    color: #CCC;
+    color: #DDD;
     font-size: 1.2rem;
     text-decoration: none;
     
@@ -586,7 +593,7 @@ footer > div > p {
 
 .contact-splash {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/resources/images/placeholders/backdrop-placeholder.jpg");
-    font-size: 1.5rem;
+    font-size: 1.1rem;
 }
 
 .contact-splash a {
@@ -609,75 +616,69 @@ footer > div > p {
 }
 
 .contact-content h2 {
-    background: grey;
     margin: 0;
     padding: 1rem 2rem;
 }
 
-.contact-form-wrapper {
-    background: lightgrey;
-}
-
 .contact-form {
     display: flex;
-    flex-direction: column;
+    font-size: 1.5rem;
     padding: 0.5rem;
 }
 
-.contact-form label {
-    margin-top: 0.5rem;
-    margin-bottom: 0;
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
+.contact-left {
+    display: flex;
+    flex-direction: column;
+    margin-right: 2rem;
 }
 
-.contact-form input {
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
+input[type="text"], input[type="email"] {
+    border: none;
+    border-bottom: 1px solid lightgrey;
+    font-size: 1rem;
+    font-family: 'Raleway', sans-serif;
+    color: #444;    
+    margin-bottom: 1rem;
+    margin-right: 2px; /* match recaptcha */
+    padding: 0.3rem;
+    outline: none;
 }
 
-.contact-form input[type="text"], input[type="email"] {
-    padding: 4px;
-}
-
-.contact-form textarea {
-    margin-top: 0.5rem;
-    margin-bottom: 0;
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
-    padding: 4px;
-}
-
-.g-recaptcha {
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
-}
-
-.contact-form input[type="submit"] {
+input[type="submit"] {
     padding: 10px 30px 10px 30px;
-    background: #66C1E4;
+    background: #F00;
     border: none;
     color: #FFF;
     box-shadow: 1px 1px 1px #4C6E91;
     -webkit-box-shadow: 1px 1px 1px #4C6E91;
     -moz-box-shadow: 1px 1px 1px #4C6E91;
     text-shadow: 1px 1px 1px #5079A3;
-    margin-right: auto;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
+    margin-top: 1rem;
+    float: right;
 }
 
-.contact-form input[type="submit"]:hover {
-    background: #3EB1DD;
+textarea {
+    padding: 9px;
+    border-radius: 2px;
+    border: 1px solid lightgrey;
+    font-size: 1rem;
+    font-family: 'Raleway', sans-serif;
+    color: #444;
+    height: 100%;
+}
+
+.contact-form tr:last-child {
+    height: 4rem;
+}
+
+input[type="submit"]:hover {
+    background: #F30;
     cursor: pointer;
 }
 
 .contact-sent {
     display: none;
+    font-size: 1.1rem;
 }
 
 /*** faq.html ***/
