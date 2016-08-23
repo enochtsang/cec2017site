@@ -41,8 +41,9 @@ h3 {
 }
 
 .splash-info {
-    height: 20rem;
+    height: 40rem;
     max-width: 50vh;
+    color: white;
 }
 
 .pdf-label:hover {
@@ -62,6 +63,7 @@ header > div {
 
 .info-bar > div {
     margin-top: 1.5rem;
+    white-space: nowrap;
 }
 
 .info-bar > div hr {
@@ -78,10 +80,16 @@ header > div {
 }
 
 .header-logo {
-    height: 4rem;
-    width: 4rem;
+    height: 5rem;
+    width: 5rem;
 }
 
+.header-separator {
+    width: 80%;
+    border: 0;
+    height: 2px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0))
+}
 .nav-bar ul {
     list-style-type: none;
     padding-left: 0;
@@ -168,8 +176,9 @@ footer > div > p {
 /*** home.html ***/
 
 .home-splash {
-    background-image: url("/resources/images/backdrop-placeholder.jpg");
+    background-image: url("/resources/images/placeholders/backdrop-placeholder.jpg");
     flex-direction: column;
+    height: 40rem;
 }
 
 .home-splash img {
@@ -178,13 +187,13 @@ footer > div > p {
 
 .home .content-info > div {
     margin: 4rem;
-    width: 20rem;
+    /*width: 20rem;*/
 }
 
 /*** committee.html ***/
 
 .directors-splash {
-    background-image: url("/resources/images/backdrop-placeholder.jpg");
+    background-image: url("/resources/images/placeholders/backdrop-placeholder.jpg");
     padding: 3rem 5rem;
 }
 
@@ -255,7 +264,7 @@ footer > div > p {
 /*** uofc.html ***/
 
 .uc-splash {
-    background-image: url("/resources/images/backdrop-placeholder.jpg");
+    background-image: url("/resources/images/uc-backdrop.jpg");
 }
 
 .uc-splash img {
@@ -278,7 +287,7 @@ footer > div > p {
 /*** calgary.html ***/
 
 .calgary-splash {
-    background-image: url("/resources/images/backdrop-placeholder.jpg");
+    background-image: url("/resources/images/calgary-backdrop.jpg");
 }
 
 .calgary-splash img {
@@ -303,7 +312,7 @@ footer > div > p {
 /*** hotel.html ***/
 
 .hotel-splash {
-    background-image: url("/resources/images/backdrop-placeholder.jpg");
+    background-image: url("/resources/images/radisson-backdrop.jpg");
 }
 
 .hotel-splash img {
@@ -374,11 +383,35 @@ footer > div > p {
     -moz-background-size: cover;
     -o-background-size: cover;
     -webkit-background-size: cover;
-    background-image: url("/resources/images/backdrop-placeholder.jpg");
     background-size: cover;
     height: 20rem;
+    color: white;
 }
 
+.competitions-general .competition-splash {
+    background-image: url("/resources/images/competitions-general.jpg")
+}
+.senior-design .competition-splash {
+    background-image: url("/resources/images/senior-design.jpg")
+}
+.junior-design .competition-splash {
+    background-image: url("/resources/images/junior-design.jpg")
+}
+.innovative-design .competition-splash {
+    background-image: url("/resources/images/innovative-design.jpg")
+}
+.re-engineering .competition-splash {
+    background-image: url("/resources/images/re-engineering.jpg")
+}
+.engineering-communication .competition-splash {
+    background-image: url("/resources/images/engineering-communication.jpg")
+}
+.consulting .competition-splash {
+    background-image: url("/resources/images/consulting.jpg")
+}
+.extemporaneous-debate .competition-splash {
+    background-image: url("/resources/images/extemporaneous-debate.jpg")
+}
 .competition-splash h2 {
     font-size: 2em;
     margin: 0;
@@ -416,8 +449,8 @@ footer > div > p {
 }
 
 .lead-sponsors {
-    background-image: url("/resources/images/backdrop-placeholder.jpg");
-    padding
+    background-image: url("/resources/images/sponsorship-backdrop.jpg");
+    height: 40rem;
 }
 
 .lead-sponsors img {
@@ -500,7 +533,7 @@ footer > div > p {
 /*** contact.html ***/
 
 .contact-splash {
-    background-image: url("/resources/images/backdrop-placeholder.jpg");
+    background-image: url("/resources/images/placeholders/backdrop-placeholder.jpg");
     font-size: 1.5rem;
 }
 
