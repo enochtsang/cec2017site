@@ -1,19 +1,12 @@
 package main
 
 import (
-    "html/template"
     "log"
     "net/http"
     "os"
     "path"
     "path/filepath"
 )
-
-type Competition struct {
-    ID    string
-    Title string
-    Blurb string
-}
 
 func check(err error) {
     if err != nil {
@@ -32,149 +25,6 @@ func absPath(relativePath string) string {
 
 func redirectToHome(w http.ResponseWriter, r *http.Request) {
     http.Redirect(w, r, "/home", 301)
-}
-
-func home(w http.ResponseWriter, r *http.Request) {
-    t := template.Must(template.ParseFiles(
-        absPath("templates/base.html"),
-        absPath("templates/home.html")))
-    err := t.ExecuteTemplate(w, "base", nil)
-    check(err)
-}
-
-func home_committee(w http.ResponseWriter, r *http.Request) {
-    t := template.Must(template.ParseFiles(
-        absPath("templates/base.html"),
-        absPath("templates/committee.html")))
-    err := t.ExecuteTemplate(w, "base", nil)
-    check(err)
-}
-
-func home_uofc(w http.ResponseWriter, r *http.Request) {
-    t := template.Must(template.ParseFiles(
-        absPath("templates/base.html"),
-        absPath("templates/uofc.html"),
-        absPath("templates/widgets/didyouknow.html"),
-        absPath("templates/widgets/location.html")))
-    err := t.ExecuteTemplate(w, "base", nil)
-    check(err)
-}
-
-func home_calgary(w http.ResponseWriter, r *http.Request) {
-    t := template.Must(template.ParseFiles(
-        absPath("templates/base.html"),
-        absPath("templates/calgary.html"),
-        absPath("templates/widgets/didyouknow.html"),
-        absPath("templates/widgets/location.html")))
-    err := t.ExecuteTemplate(w, "base", nil)
-    check(err)
-}
-
-func home_hotel(w http.ResponseWriter, r *http.Request) {
-    t := template.Must(template.ParseFiles(
-        absPath("templates/base.html"),
-        absPath("templates/hotel.html"),
-        absPath("templates/widgets/location.html")))
-    err := t.ExecuteTemplate(w, "base", nil)
-    check(err)
-}
-
-func competitions(w http.ResponseWriter, r *http.Request) {
-    t := template.Must(template.ParseFiles(
-        absPath("templates/base.html"),
-        absPath("templates/competitions.html")))
-    blurb :=
-        `skdjfskfjsdkldsklfjsdklfj
-    skdjfskfjsdkldsklfjsdklfj
-    skdjfskfjsdkldsklfjsdklfj
-    skdjfskfjsdkldsklfjsdklfj
-    skdjfskfjsdkldsklfjsdklfj
-    skdjfskfjsdkldsklfjsdklfj`
-
-    competitions := []Competition{
-        {
-            ID:    "competitions-general",
-            Title: "General",
-            Blurb: blurb,
-        },
-        {
-            ID:    "senior-design",
-            Title: "Senior Design",
-            Blurb: blurb,
-        },
-        {
-            ID:    "junior-design",
-            Title: "Junior Design",
-            Blurb: blurb,
-        },
-        {
-            ID:    "innovative-design",
-            Title: "Innovative Design",
-            Blurb: blurb,
-        },
-        {
-            ID:    "re-engineering",
-            Title: "Re Engineering",
-            Blurb: blurb,
-        },
-        {
-            ID:    "engineering-communication",
-            Title: "Engineering Communication",
-            Blurb: blurb,
-        },
-        {
-            ID:    "consulting",
-            Title: "Consulting",
-            Blurb: blurb,
-        },
-        {
-            ID:    "extemporaneous-debate",
-            Title: "Extemporaneous Debate",
-            Blurb: blurb,
-        },
-    }
-    err := t.ExecuteTemplate(w, "base", competitions)
-    check(err)
-}
-
-func sponsors(w http.ResponseWriter, r *http.Request) {
-    t := template.Must(template.ParseFiles(
-        absPath("templates/base.html"),
-        absPath("templates/sponsors.html")))
-    err := t.ExecuteTemplate(w, "base", nil)
-    check(err)
-}
-
-func sponsors_package(w http.ResponseWriter, r *http.Request) {
-    t := template.Must(template.ParseFiles(
-        absPath("templates/base.html"),
-        absPath("templates/sponsors_package.html")))
-    err := t.ExecuteTemplate(w, "base", nil)
-    check(err)
-}
-
-func attending(w http.ResponseWriter, r *http.Request) {
-    t := template.Must(template.ParseFiles(
-        absPath("templates/base.html"),
-        absPath("templates/attending.html")))
-    err := t.ExecuteTemplate(w, "base", nil)
-    check(err)
-}
-
-func contact(w http.ResponseWriter, r *http.Request) {
-    t := template.Must(template.ParseFiles(
-        absPath("templates/base.html"),
-        absPath("templates/contact.html")))
-    err := t.ExecuteTemplate(w, "base", nil)
-    check(err)
-}
-
-func contact_faq(w http.ResponseWriter, r *http.Request) {
-    t := template.Must(template.ParseFiles(
-        absPath("templates/base.html"),
-        absPath("templates/faq.html")))
-    err := t.ExecuteTemplate(w, "base", nil)
-    check(err)
 }
 
 func faviconHandler(w http.ResponseWriter, r *http.Request) {
