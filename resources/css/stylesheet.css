@@ -56,6 +56,7 @@ h3 {
 /*** base.html ***/
 
 header > div {
+    font-family: 'Oxygen', sans-serif;
     font-size: 1.7rem;
 }
 
@@ -88,7 +89,7 @@ header > div {
 
 .header-separator {
     border: 0;
-    height: 1.5px;
+    height: 2.5px;
     margin: 0;
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0))
 }
@@ -103,7 +104,7 @@ header > div {
     list-style-type: none;
     padding-left: 0;
     flex-wrap: wrap;
-    margin: 1rem;
+    margin: 0.7rem;
 }
 
 .nav-bar li {
@@ -113,7 +114,7 @@ header > div {
 }
 
 .nav-bar a {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 
     transition: color 0.2s;
     -webkit-transition: color 0.2s;
@@ -134,24 +135,37 @@ header > div {
     display: none;
     margin-top: 0;
     min-width: 160px;
-    padding-top: 1rem;
+    padding-top: 0.8rem;
     position: absolute;
     z-index: 99;
 }
 
 .nav-dropdown a {
     display: block;
-    padding: 12px 16px;
+    padding: 11px 14px;
 
     background-color: black;
-    border: 1px solid grey;
-    color: white;
-    font-size: 0.8em;
+    border-bottom: 1px solid #444;
+    color: #CCC;
+    font-size: 1.2rem;
     text-decoration: none;
+    
+    transition: color 0s;
+    -webkit-transition: color 0s;
+    -o-transition:  color 0s;
+    -moz-transition:  color 0s;
+}
+
+.nav-dropdown a:last-child {
+    border-bottom: none;
 }
 
 .nav-dropdown a:hover {
-    color: lightgrey;
+    color: #EEE;
+    transition: color 0s;
+    -webkit-transition: color 0s;
+    -o-transition:  color 0s;
+    -moz-transition:  color 0s;
 }
 
 .nav-dropdown:hover {
@@ -195,7 +209,7 @@ footer > div > p {
 /*** home.html ***/
 
 .home-splash {
-    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/resources/images/placeholders/backdrop-placeholder.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/resources/images/placeholders/backdrop-placeholder.jpg");
     flex-direction: column;
 }
 
@@ -222,7 +236,7 @@ footer > div > p {
 /*** committee.html ***/
 
 .directors-splash {
-    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/resources/images/placeholders/backdrop-placeholder.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/resources/images/placeholders/backdrop-placeholder.jpg");
     padding: 3rem 5rem;
 }
 
@@ -293,7 +307,7 @@ footer > div > p {
 /*** uofc.html ***/
 
 .uc-splash {
-    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/resources/images/uc-backdrop.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/resources/images/uc-backdrop.jpg");
 }
 
 .uc-splash img {
@@ -316,7 +330,7 @@ footer > div > p {
 /*** calgary.html ***/
 
 .calgary-splash {
-    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/resources/images/calgary-backdrop.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/resources/images/calgary-backdrop.jpg");
 }
 
 .calgary-splash img {
@@ -341,7 +355,7 @@ footer > div > p {
 /*** hotel.html ***/
 
 .hotel-splash {
-    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/resources/images/radisson-backdrop.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/resources/images/radisson-backdrop.jpg");
 }
 
 .hotel-splash img {
@@ -367,11 +381,15 @@ footer > div > p {
 .competitions {
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
     margin: auto;
     margin-top: 2rem;
 }
 
 .competitions-nav ul {
+    display: flex;
+    flex-direction: column;
     font-size: 1.3rem;
     list-style-type: none;
     margin: 0;
@@ -379,6 +397,7 @@ footer > div > p {
 
 .competitions-nav li {
     padding: 0.3rem;
+    text-align: center;
 
     transition: color 0.2s;
     -webkit-transition: color 0.2s;
@@ -394,16 +413,6 @@ footer > div > p {
     -webkit-transition: color 0.2s;
     -o-transition:  color 0.2s;
     -moz-transition:  color 0.2s;
-}
-
-.competition-nav-border {
-    background: -moz-linear-gradient(white, black, white);
-    background: -o-linear-gradient(white, black, white);
-    background: -webkit-linear-gradient(white, black, white);
-    background: black;
-    background: linear-gradient(white, black, white);
-    margin: 0 1rem;
-    width: 3px;
 }
 
 .competition-info-container {
@@ -430,28 +439,28 @@ footer > div > p {
 }
 
 .competitions-general .competition-splash {
-    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/resources/images/competitions-general.jpg")
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/resources/images/competitions-general.jpg")
 }
 .senior-design .competition-splash {
-    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/resources/images/senior-design.jpg")
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/resources/images/senior-design.jpg")
 }
 .junior-design .competition-splash {
-    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/resources/images/junior-design.jpg")
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/resources/images/junior-design.jpg")
 }
 .innovative-design .competition-splash {
-    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/resources/images/innovative-design.jpg")
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/resources/images/innovative-design.jpg")
 }
 .re-engineering .competition-splash {
-    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/resources/images/re-engineering.jpg")
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/resources/images/re-engineering.jpg")
 }
 .engineering-communication .competition-splash {
-    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/resources/images/engineering-communication.jpg")
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/resources/images/engineering-communication.jpg")
 }
 .consulting .competition-splash {
-    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/resources/images/consulting.jpg")
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/resources/images/consulting.jpg")
 }
 .extemporaneous-debate .competition-splash {
-    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/resources/images/extemporaneous-debate.jpg")
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/resources/images/extemporaneous-debate.jpg")
 }
 .competition-splash h2 {
     font-size: 2em;
@@ -467,14 +476,14 @@ footer > div > p {
 
 .sponsors h1 {
     margin: 0;
+    margin-top: 2rem;
     padding: 1rem 1rem 0.5rem 1rem;
     text-align: center;
-    margin-top: 2rem;
 }
 
 .sponsors h1:first-child {
-    padding: 0;
-    margin-top: 0;
+    font-size: 3rem;
+    margin-top: 0rem;
 }
 
 .sponsors h1 + hr {
@@ -490,7 +499,10 @@ footer > div > p {
 }
 
 .lead-sponsors {
-    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/resources/images/sponsorship-backdrop.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/resources/images/sponsorship-backdrop.jpg");
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 .lead-sponsors img {
@@ -573,7 +585,7 @@ footer > div > p {
 /*** contact.html ***/
 
 .contact-splash {
-    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/resources/images/placeholders/backdrop-placeholder.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/resources/images/placeholders/backdrop-placeholder.jpg");
     font-size: 1.5rem;
 }
 
@@ -590,26 +602,78 @@ footer > div > p {
     display: flex;
     flex-direction: column;
     margin: auto;
+    margin-top: 2rem;
+    padding-bottom: 2rem;
     min-width: 50rem;
-    padding-bottom: 1rem;
-    width: 50%;
+    width: 0%;
+}
+
+.contact-content h2 {
+    background: grey;
+    margin: 0;
+    padding: 1rem 2rem;
 }
 
 .contact-form-wrapper {
-    height: 30rem;
+    background: lightgrey;
 }
 
 .contact-form {
     display: flex;
     flex-direction: column;
+    padding: 0.5rem;
 }
 
-.contact-form * {
+.contact-form label {
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+}
+
+.contact-form input {
+    margin-top: 0.5rem;
     margin-bottom: 0.5rem;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+}
+
+.contact-form input[type="text"], input[type="email"] {
+    padding: 4px;
+}
+
+.contact-form textarea {
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    padding: 4px;
+}
+
+.g-recaptcha {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
 }
 
 .contact-form input[type="submit"] {
-    width: 6rem;
+    padding: 10px 30px 10px 30px;
+    background: #66C1E4;
+    border: none;
+    color: #FFF;
+    box-shadow: 1px 1px 1px #4C6E91;
+    -webkit-box-shadow: 1px 1px 1px #4C6E91;
+    -moz-box-shadow: 1px 1px 1px #4C6E91;
+    text-shadow: 1px 1px 1px #5079A3;
+    margin-right: auto;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.contact-form input[type="submit"]:hover {
+    background: #3EB1DD;
+    cursor: pointer;
 }
 
 .contact-sent {
