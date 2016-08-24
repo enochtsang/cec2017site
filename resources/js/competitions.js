@@ -8,13 +8,19 @@ $(document).ready(function(){
 		}
 	}
 
-	currentSection.fadeIn();
+	var maxHeight = Math.max.apply(null, $(".competition-info").map(function() {
+		return $(this).height();
+	}).get());
+	$(".competition-info-container").css("min-height", maxHeight);
+
+	currentSection.css("opacity", "1");
 
 	$(".competitions-nav li").click(function() {
 		var newSection = $("." + $(this).attr("value"));
-		currentSection.fadeOut(function() {
-			newSection.fadeIn();
+		currentSection.css("opacity", "0");
+		setTimeout(function() {
+			newSection.css("opacity", "1");
 			currentSection = newSection;
-		});
-	})
+		}, 400);
+	});
 });

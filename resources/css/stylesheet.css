@@ -43,7 +43,7 @@ h3 {
 }
 
 .splash-info {
-    max-width: 50vh;
+    max-width: 30vw;
     color: white;
 }
 
@@ -244,7 +244,6 @@ footer > div > p {
 
 .directors-splash {
     position: relative;
-    width: 100%;
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/resources/images/placeholders/backdrop-placeholder.jpg");
     padding: 3rem 5rem;
 }
@@ -405,20 +404,24 @@ footer > div > p {
     align-items: center;
     flex-direction: column;
     margin: auto;
-    margin-top: 2rem;
+    height: 100%;
 }
 
 .competitions-nav ul {
-    display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     font-size: 1.3rem;
     list-style-type: none;
     margin: 0;
+    padding: 0;
 }
 
 .competitions-nav li {
-    padding: 0.3rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
     text-align: center;
+    white-space: nowrap;
 
     transition: color 0.2s;
     -webkit-transition: color 0.2s;
@@ -436,18 +439,31 @@ footer > div > p {
     -moz-transition:  color 0.2s;
 }
 
+.competitions hr {
+    width: 100%;
+    border: 0;
+    height: 2.5px;
+    margin: 0;
+    background-image: linear-gradient(to right, white, black, white);
+}
+
 .competition-info-container {
     padding: 0;
     position: relative;
+    margin-top: 0.7rem;
     width: 38rem;
 }
 
-
 .competition-info {
-    display: none;
+    opacity: 0;
     left: 0;
     position: absolute;
     top: 0;
+
+    transition: opacity 0.5s;
+    -webkit-transition: opacity 0.5s;
+    -o-transition:  opacity 0.5s;
+    -moz-transition:  opacity 0.5s;
 }
 
 .competition-splash {
