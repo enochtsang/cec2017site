@@ -1,7 +1,8 @@
 {{define "content"}}
-<div class="directors-splash">
+<script type="text/javascript" src="/resources/js/committee.js"></script>
+<div class="directors-splash content-splash">
     {{range .}}
-    <div class="director flex content-splash">
+    <div class="director flex {{.Class}}">
         <img src="{{.PicturePath}}" alt="directors-member" />
         <div class="splash-info">
             <h3>{{.Name}}</h3>
@@ -19,7 +20,7 @@
     {{range .}}
     <div class="directors-mini">
         <h2 class="directors-mini-title">{{.Role}}</h2>
-        <img src="{{.PicturePath}}" alt="directors-member" />
+        <img src="{{.PicturePath}}" alt="directors-member" class="{{.Class}}" />
         <div class="directors-mini-name">
             <h2>{{.Name}}</h2>
         </div>
