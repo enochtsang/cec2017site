@@ -15,29 +15,20 @@
     </div>
 </div>
 <div class="contact-content flex">
-    <div class="contact-form">
-        <table>
-            <tr>
-                <td class="contact-left">
-                    <input type="text" name="name" placeholder="Name">
-                    <input type="text" name="school-organization" placeholder="School or Organization">
-                    <input type="email" name="return-email" placeholder="Email">
-                    <div class="g-recaptcha" data-sitekey="6Lce7SYTAAAAAIrX7phaDRlvkkJDzmzHWcGhS1GN"></div>
-                </td>
-                <td>
-                    <textarea name="message" cols=50 placeholder="Message"></textarea>
-                </td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>
-                    <input type="submit" name="Submit">
-                    <div class="contact-sent">
-                        Thanks for contacting us, we'll get back to you soon!
-                    </div>
-                </td>
-            </tr>
-        </table>
+    <form class="contact-form" autocomplete="off">
+        <div class="contact-left">
+            <input type="text" name="name" placeholder="Name">
+            <input type="text" name="school-organization" placeholder="School or Organization">
+            <input type="email" name="return-email" placeholder="Email">
+            <div class="g-recaptcha" data-sitekey="6Lce7SYTAAAAAIrX7phaDRlvkkJDzmzHWcGhS1GN"></div>
+        </div>
+        <div class="contact-right">
+            <textarea name="message" cols=50 placeholder="Message"></textarea>
+            <input type="submit" name="Submit" value="Submit">
+        </div>
+    </form>
+    <div class="contact-sent">
+        Thanks for contacting us, we'll get back to you soon!
     </div>
 </div>
 {{end}}

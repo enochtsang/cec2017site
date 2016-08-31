@@ -19,12 +19,14 @@ body {
 a, a:visited, a:hover, a:active {
     color: black;
     text-decoration: none; /* no underline */
+    outline: none;
 }
 
 h3 {
     font-size: 1.3rem;
     margin: 0.5rem 0;
 }
+
 
 .flex {
     align-items: center;
@@ -50,6 +52,10 @@ h3 {
 .pdf-label:hover {
     color: red;
     cursor: pointer;
+}
+
+.mobile {
+    display: none;
 }
 
 /*** base.html ***/
@@ -97,11 +103,34 @@ header > div {
     height: 2.5px;
     margin: 0;
     background-image: linear-gradient(to right, #111, white, #111);
+    width: 100%;
 }
 
 @media(max-width: 1080px) {
+    header > div {
+        font-size: 2rem;
+    }
+
+    .info-bar {
+        padding-top: 0.6rem;
+        padding-bottom: 0.6rem;
+    }
+
+    .info-bar div:first-child {
+        width: 25rem;
+    }
+
+    .info-bar div:last-child {
+        width: 25rem;
+    }
+
+    .header-logo {
+        height: 7rem;
+        width: 7rem;
+    }
+
     .header-separator {
-            height: 2px;
+        height: 2px;
     }
 }
 
@@ -179,6 +208,51 @@ header > div {
     display: block;
 }
 
+.mobile-nav-bar {
+    display: none;
+}
+
+.mobile-nav-bar ul {
+    display: none;
+    list-style-type: none;
+    flex-direction: column;
+    margin: auto;
+    padding-left: 0;
+}
+
+.mobile-nav-bar li {
+    padding: 1rem;
+    text-align: center;
+}
+
+.mobile-nav-bar a {
+    color: white;
+    font-size: 2.2rem;
+}
+
+.mobile-nav-controller {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.mobile-nav-controller img {
+    height: 1.5rem;
+    margin: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+@media(max-width: 1080px) {
+    .nav-bar {
+        display: none;
+    }
+
+    .mobile-nav-bar {
+        display: block;
+    }
+}
+
 footer {
     bottom: 0;
     display: flex;
@@ -216,7 +290,7 @@ footer > div > p {
 /*** home.html ***/
 
 .home-splash {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/resources/images/placeholders/backdrop-placeholder.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/resources/images/main-backdrop.jpg");
     flex-direction: column;
 }
 
@@ -235,7 +309,12 @@ footer > div > p {
     }
 
     .home .content-info > div {
+        margin-bottom: 0;
         width: 80%;
+    }
+
+    .home .content-info div:last-child {
+        margin-bottom: 10rem;
     }
 }
 
@@ -283,7 +362,8 @@ footer > div > p {
     position: relative;
     top: 1rem;
 
-    background: pink;
+    color: white;
+    background: #60150B;
 }
 
 .directors-mini img {
@@ -319,9 +399,16 @@ footer > div > p {
 }
 
 .directors-mini-name h2 {
-    background: pink;
+    color: white;
+    background: #60150B;
     margin: 0;
     padding: 0.5rem 1rem;
+}
+
+@media(max-width: 1080px) {
+    .directors-listing {
+        margin-bottom: 10rem;
+    }
 }
 
 /*** uofc.html ***/
@@ -415,6 +502,10 @@ footer > div > p {
     padding: 0;
 }
 
+.competitions-nav hr {
+    display: none;
+}
+
 .competitions-nav li {
     padding-left: 1rem;
     padding-right: 1rem;
@@ -451,7 +542,7 @@ footer > div > p {
     padding: 0;
     position: relative;
     margin-top: 0.7rem;
-    width: 38rem;
+    width: 40vw;
 }
 
 .competition-info {
@@ -471,7 +562,7 @@ footer > div > p {
     -o-background-size: cover;
     -webkit-background-size: cover;
     background-size: cover;
-    height: 20rem;
+    height: 20vw;
     color: white;
 }
 
@@ -500,14 +591,60 @@ footer > div > p {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/resources/images/extemporaneous-debate.jpg")
 }
 .competition-splash h2 {
-    font-size: 2em;
+    font-size: 2rem;
     margin: 0;
     padding: 1.5rem;
 }
 
 .competition-blurb {
     padding-top: 1rem;
+    font-size: 1.3rem;
+    text-align: center;
 }
+
+@media(max-width: 1080px) {
+    .competitions {
+        flex-direction: column-reverse;
+    }
+
+    .competitions-nav {
+        width: 100%;
+        margin-bottom: 4.1rem;
+    }
+
+    .competitions-nav ul {
+        flex-direction: column;
+        font-size: 2.8rem;
+    }
+
+    .competitions-nav hr {
+        display: block;
+    }
+
+    .competitions-nav hr:last-child {
+        display: none;
+    }
+
+    .competition-info-container {
+        width: 100%;
+        margin-top: 0;
+    }
+
+    .competition-splash {
+        height: 60vw;
+    }
+
+    .competition-splash h2 {
+        font-size: 4rem;
+    }
+
+    .competition-blurb {
+        padding: 2rem;
+        font-size: 2rem;
+        text-align: center;
+    }
+}
+
 
 /*** sponsors.html ***/
 
@@ -518,17 +655,11 @@ footer > div > p {
     text-align: center;
 }
 
-.sponsors h1:first-child {
-    font-size: 3rem;
-    margin-top: 0rem;
-}
-
 .sponsors h1 + hr {
     border: 0;
     height: 2px;
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
     width: 80%
-
 }
 
 .sponsors-container {
@@ -539,12 +670,18 @@ footer > div > p {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/resources/images/sponsorship-backdrop.jpg");
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    /*justify-content: space-around;*/
 }
 
 .lead-sponsors img {
     height: 10rem;
     margin: 1rem 3rem;
+}
+
+.lead-sponsors h1 {
+    font-size: 3rem;
+    margin: 5rem;
+    margin-top: 0;
 }
 
 .gold-sponsors img {
@@ -569,6 +706,16 @@ footer > div > p {
 
 .bronze-sponsors img:first-child {
     margin-left: 0.3rem;
+}
+
+@media(max-width: 1080px) {
+    .sponsors {
+        margin-bottom: 10rem;
+    }
+
+    .sponsors .content-splash {
+        height: 40vh;
+    }
 }
 
 /*** sponsor_package.html ***/
@@ -619,6 +766,20 @@ footer > div > p {
     display: none;
 }
 
+@media(max-width: 1080px) {
+    .attending {
+        text-align: center;
+    }
+
+    .pdf-label {
+        display: none;
+    }
+
+    #delegate-package-pdf, #official-rulebook-pdf {
+        display: none;
+    }
+}
+
 /*** contact.html ***/
 
 .contact-splash {
@@ -641,8 +802,6 @@ footer > div > p {
     margin: auto;
     margin-top: 2rem;
     padding-bottom: 2rem;
-    min-width: 50rem;
-    width: 0%;
 }
 
 .contact-content h2 {
@@ -652,7 +811,7 @@ footer > div > p {
 
 .contact-form {
     display: flex;
-    font-size: 1.5rem;
+    font-size: 1rem;
     padding: 0.5rem;
 }
 
@@ -664,20 +823,23 @@ footer > div > p {
 
 input[type="text"], input[type="email"] {
     border: none;
-    border-bottom: 1px solid lightgrey;
+    border-bottom: 0.1rem solid lightgrey;
     font-size: 1rem;
     font-family: 'Raleway', sans-serif;
-    color: #444;    
+    color: #444;
     margin-bottom: 1rem;
     margin-right: 2px; /* match recaptcha */
     padding: 0.3rem;
     outline: none;
+    background-color: white;
 }
 
 input[type="submit"] {
-    padding: 10px 30px 10px 30px;
+    padding: 0.6rem 2rem 0.6rem 2rem;
     background: #F00;
+    font-size: 0.9rem;
     border: none;
+    border-radius: 2px;
     color: #FFF;
     box-shadow: 1px 1px 1px #4C6E91;
     -webkit-box-shadow: 1px 1px 1px #4C6E91;
@@ -687,18 +849,20 @@ input[type="submit"] {
     float: right;
 }
 
-textarea {
-    padding: 9px;
+.contact-form textarea {
+    padding: 0.5rem;
     border-radius: 2px;
-    border: 1px solid lightgrey;
+    border: 0.1rem solid lightgrey;
+    background-color: white;
     font-size: 1rem;
     font-family: 'Raleway', sans-serif;
     color: #444;
-    height: 100%;
+    height: 15rem;
+    width: 23.8rem;
 }
 
-.contact-form tr:last-child {
-    height: 4rem;
+.contact-right {
+    width: 25rem;
 }
 
 input[type="submit"]:hover {
@@ -708,8 +872,65 @@ input[type="submit"]:hover {
 
 .contact-sent {
     display: none;
-    font-size: 1.1rem;
+    font-size: 1rem;
+    margin-top: 1.4rem;
+    height: 1.8rem;
 }
+
+
+@media(max-width: 1080px) {
+    .contact-form {
+        flex-direction: column;
+        align-items: center;
+        width: 80%;
+    }
+
+    input[type="text"], input[type="email"], input[type="submit"], .contact-form textarea {
+        width: 100%;
+        font-size: 3rem;
+        margin-bottom: 2.5rem;
+        text-align: center;
+    }
+
+    .contact-left {
+        width: 100%;
+    }
+
+    input[type="submit"] {
+        margin-bottom: 5rem;
+        width: 50%;
+        float: none;
+    }
+
+    .g-recaptcha {
+        margin: auto;
+        margin-top: 2.5rem;
+        margin-bottom: 5rem;
+        transform: scale(2.0);
+    }
+
+    .contact-form textarea {
+        width: 95%;
+        height: 20rem;
+    }
+
+    .contact-right {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .contact-sent {
+        margin-bottom: 8rem;
+        height: 5rem;
+        font-size: 3rem;
+        text-align: center;
+        width: 80%;
+    }
+
+}
+
 
 /*** faq.html ***/
 
@@ -732,7 +953,7 @@ input[type="submit"]:hover {
 }
 
 .dyk-title {
-    background: pink;
+    background: #60150B;
     left: -3rem;
     margin: 0;
     padding: 0.5rem 1rem;
@@ -770,7 +991,7 @@ input[type="submit"]:hover {
 }
 
 .location-title {
-    background: pink;
+    background: #60150B;
     left: -3rem;
     margin: 0;
     padding: 0.5rem 1rem;
