@@ -16,6 +16,10 @@ type CommitteeMember struct {
     Info        string
 }
 
+type Location struct {
+    LocationSource string
+}
+
 func home(w http.ResponseWriter, r *http.Request) {
     t := template.Must(template.ParseFiles(
         absPath("templates/base.html"),
@@ -180,7 +184,8 @@ func home_uofc(w http.ResponseWriter, r *http.Request) {
         absPath("templates/uofc.html"),
         absPath("templates/widgets/didyouknow.html"),
         absPath("templates/widgets/location.html")))
-    err := t.ExecuteTemplate(w, "base", nil)
+    location := Location{"https://www.google.com/maps/embed/v1/place?q=univeristy%20of%20calgary&key=AIzaSyDtvcBmchfCPR_BxsOhP8UWOvamaNEQbQA&zoom=12"}
+    err := t.ExecuteTemplate(w, "base", location)
     check(err)
 }
 
@@ -190,7 +195,8 @@ func home_calgary(w http.ResponseWriter, r *http.Request) {
         absPath("templates/calgary.html"),
         absPath("templates/widgets/didyouknow.html"),
         absPath("templates/widgets/location.html")))
-    err := t.ExecuteTemplate(w, "base", nil)
+    location := Location{"https://www.google.com/maps/embed/v1/place?q=calgary%20ab&key=AIzaSyDtvcBmchfCPR_BxsOhP8UWOvamaNEQbQA"}
+    err := t.ExecuteTemplate(w, "base", location)
     check(err)
 }
 
@@ -199,6 +205,7 @@ func home_hotel(w http.ResponseWriter, r *http.Request) {
         absPath("templates/base.html"),
         absPath("templates/hotel.html"),
         absPath("templates/widgets/location.html")))
-    err := t.ExecuteTemplate(w, "base", nil)
+    location := Location{"https://www.google.com/maps/embed/v1/place?q=radisson%20hotel%20calgary&key=AIzaSyDtvcBmchfCPR_BxsOhP8UWOvamaNEQbQA"}
+    err := t.ExecuteTemplate(w, "base", location)
     check(err)
 }

@@ -19,7 +19,9 @@
 <div class="directors-listing flex">
     {{range .}}
     <div class="directors-mini">
-        <h2 class="directors-mini-title">{{.Role}}</h2>
+        <div class="directors-mini-title">
+            <h2>{{.Role}}</h2>
+        </div>
         <img src="{{.PicturePath}}" alt="directors-member" class="{{.Class}}" />
         <div class="directors-mini-name">
             <h2>{{.Name}}</h2>

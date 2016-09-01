@@ -1,0 +1,458 @@
+diff --git a/home.go b/home.go
+index 3a65550..90b79d2 100644
+--- a/home.go
++++ b/home.go
+@@ -16,6 +16,10 @@ type CommitteeMember struct {
+     Info        string
+ }
+ 
++type Location struct {
++    LocationSource string
++}
++
+ func home(w http.ResponseWriter, r *http.Request) {
+     t := template.Must(template.ParseFiles(
+         absPath("templates/base.html"),
+@@ -180,7 +184,8 @@ func home_uofc(w http.ResponseWriter, r *http.Request) {
+         absPath("templates/uofc.html"),
+         absPath("templates/widgets/didyouknow.html"),
+         absPath("templates/widgets/location.html")))
+-    err := t.ExecuteTemplate(w, "base", nil)
++    location := Location{"https://www.google.com/maps/embed/v1/place?q=univeristy%20of%20calgary&key=AIzaSyDtvcBmchfCPR_BxsOhP8UWOvamaNEQbQA&zoom=12"}
++    err := t.ExecuteTemplate(w, "base", location)
+     check(err)
+ }
+ 
+@@ -190,7 +195,8 @@ func home_calgary(w http.ResponseWriter, r *http.Request) {
+         absPath("templates/calgary.html"),
+         absPath("templates/widgets/didyouknow.html"),
+         absPath("templates/widgets/location.html")))
+-    err := t.ExecuteTemplate(w, "base", nil)
++    location := Location{"https://www.google.com/maps/embed/v1/place?q=calgary%20ab&key=AIzaSyDtvcBmchfCPR_BxsOhP8UWOvamaNEQbQA"}
++    err := t.ExecuteTemplate(w, "base", location)
+     check(err)
+ }
+ 
+@@ -199,6 +205,7 @@ func home_hotel(w http.ResponseWriter, r *http.Request) {
+         absPath("templates/base.html"),
+         absPath("templates/hotel.html"),
+         absPath("templates/widgets/location.html")))
+-    err := t.ExecuteTemplate(w, "base", nil)
++    location := Location{"https://www.google.com/maps/embed/v1/place?q=radisson%20hotel%20calgary&key=AIzaSyDtvcBmchfCPR_BxsOhP8UWOvamaNEQbQA"}
++    err := t.ExecuteTemplate(w, "base", location)
+     check(err)
+ }
+diff --git a/resources/css/stylesheet.css b/resources/css/stylesheet.css
+index fd462b4..8767a6f 100644
+--- a/resources/css/stylesheet.css
++++ b/resources/css/stylesheet.css
+@@ -1,8 +1,3 @@
+-html, body {
+-    /* Html and body take up full space, makes sure header bar reaches edges */
+-    background-color: white;
+-}
+-
+ html {
+     min-height: 100%;
+     position: relative;
+@@ -40,8 +35,15 @@ h3 {
+     -o-background-size: cover;
+     -webkit-background-size: cover;
+     background-size: cover;
++    background-position: center;
+     padding: 2rem;
+-    height: 50vh;
++    height: 60vh;
++}
++
++@media(max-width: 1080px) {
++    .content-splash {
++        height: 40vh;
++    }
+ }
+ 
+ .splash-info {
+@@ -182,7 +184,7 @@ header > div {
+ 
+     background-color: black;
+     border-bottom: 1px solid #444;
+-    color: #DDD;
++    color: #CCC;
+     font-size: 1.2rem;
+     text-decoration: none;
+ 
+@@ -197,7 +199,7 @@ header > div {
+ }
+ 
+ .nav-dropdown a:hover {
+-    color: #EEE;
++    color: white;
+     transition: color 0s;
+     -webkit-transition: color 0s;
+     -o-transition:  color 0s;
+@@ -294,8 +296,24 @@ footer > div > p {
+     flex-direction: column;
+ }
+ 
++.home-splash h1 {
++    font-size: 3.5rem;
++    margin: 1rem;
++}
++
++.home-splash h2 {
++    font-size: 2.2rem;
++    margin: 1rem;
++}
++
++.home-splash h3 {
++    font-size: 2rem;
++    margin: 1rem;
++}
++
+ .home-splash img {
+-    height: 8rem;
++    height: 12rem;
++    margin: 1rem;
+ }
+ 
+ .home .content-info > div {
+@@ -304,6 +322,22 @@ footer > div > p {
+ }
+ 
+ @media(max-width: 1080px) {
++    .home-splash h1 {
++        font-size: 4.5rem;
++    }
++
++    .home-splash h2 {
++        font-size: 2.6rem;
++    }
++
++    .home-splash h3 {
++        font-size: 2.3rem;
++    }
++
++    .home-splash img {
++        height: 12rem;
++    }
++
+     .home .content-info {
+         flex-direction: column;
+     }
+@@ -356,14 +390,22 @@ footer > div > p {
+ }
+ 
+ .directors-mini-title {
+-    left: -3rem;
++    width: 100%;
+     margin: 0;
+-    padding: 0.5rem 1rem;
+     position: relative;
+-    top: 1rem;
++    left: -1.5rem;
++    top: 1.5rem;
++
++    display: flex;
++    justify-content: flex-start;
++    text-align: left;
++}
+ 
++.directors-mini-title h2 {
+     color: white;
+     background: #60150B;
++    margin: 0;
++    padding: 0.5rem 1rem;
+ }
+ 
+ .directors-mini img {
+@@ -377,8 +419,7 @@ footer > div > p {
+ }
+ 
+ .directors-mini img:hover {
+-    border: 0.5rem solid orange;
+-    cursor: pointer;
++re    cursor: pointer;
+ 
+     transition: .2s;
+     -webkit-transition: .2s;
+@@ -387,11 +428,11 @@ footer > div > p {
+ }
+ 
+ .directors-mini-name {
+-    bottom: 2rem;
++    width: 100%;
+     margin: 0;
+-    padding: 0.5rem 1rem;
+     position: relative;
+-    right: -2rem;
++    right: -1.5rem;
++    bottom: 1.5rem;
+ 
+     display: flex;
+     justify-content: flex-end;
+@@ -434,6 +475,12 @@ footer > div > p {
+     margin: 2rem;
+ }
+ 
++@media(max-width: 1080px) {
++    .uc-content {
++        margin-bottom: 10rem;
++    }
++}
++
+ /*** calgary.html ***/
+ 
+ .calgary-splash {
+@@ -458,6 +505,11 @@ footer > div > p {
+     margin: 2rem;
+ }
+ 
++@media(max-width: 1080px) {
++    .calgary-content {
++        margin-bottom: 10rem;
++    }
++}
+ 
+ /*** hotel.html ***/
+ 
+@@ -653,6 +705,7 @@ footer > div > p {
+     margin-top: 2rem;
+     padding: 1rem 1rem 0.5rem 1rem;
+     text-align: center;
++    font-size: 2.2rem;
+ }
+ 
+ .sponsors h1 + hr {
+@@ -670,7 +723,6 @@ footer > div > p {
+     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/resources/images/sponsorship-backdrop.jpg");
+     display: flex;
+     flex-direction: column;
+-    /*justify-content: space-around;*/
+ }
+ 
+ .lead-sponsors img {
+@@ -696,6 +748,7 @@ footer > div > p {
+ 
+ .bronze-sponsors {
+     font-size: 0.8rem;
++    margin-bottom: 8rem;
+ }
+ 
+ .bronze-sponsors img {
+@@ -771,10 +824,16 @@ footer > div > p {
+         text-align: center;
+     }
+ 
++    .delegate-package-pdf, .official-rulebook-label-mobile {
++        display: block;
++        margin: 2rem;
++    }
++
+     .pdf-label {
+         display: none;
+     }
+ 
++
+     #delegate-package-pdf, #official-rulebook-pdf {
+         display: none;
+     }
+@@ -947,7 +1006,12 @@ input[type="submit"]:hover {
+ /*** didyouknow.html ***/
+ 
+ .didyouknow {
+-    background: lightblue;
++    color: white;
++    background: -webkit-linear-gradient(left top, #DDD, #555); /* For Safari 5.1 to 6.0 */
++    background: -o-linear-gradient(bottom right, #DDD, #555); /* For Opera 11.1 to 12.0 */
++    background: -moz-linear-gradient(bottom right, #DDD, #555); /* For Firefox 3.6 to 15 */
++    background: linear-gradient(to bottom right, #DDD, #555); /* Standard syntax (must be last) */
++    box-shadow: 10px 10px 5px #888888;
+     margin: 2.5rem;
+     padding: 1rem;
+ }
+@@ -963,6 +1027,7 @@ input[type="submit"]:hover {
+ 
+ .dyk-item {
+     margin-top: -1rem;
++    text-align-last: center;
+ }
+ 
+ .didyouknow img:first-child {
+@@ -981,20 +1046,32 @@ input[type="submit"]:hover {
+ /*** location.html ***/
+ 
+ .location {
+-    background: lightblue;
++    color: white;
++    background: -webkit-linear-gradient(left top, #DDD, #555); /* For Safari 5.1 to 6.0 */
++    background: -o-linear-gradient(bottom right, #DDD, #555); /* For Opera 11.1 to 12.0 */
++    background: -moz-linear-gradient(bottom right, #DDD, #555); /* For Firefox 3.6 to 15 */
++    background: linear-gradient(to bottom right, #DDD, #555); /* Standard syntax (must be last) */
++    box-shadow: 10px 10px 5px #888888;
+     padding-bottom: 0.9rem;
+ }
+ 
+-.location img {
+-    padding: 0 1rem;
++.location iframe {
++    padding-left: 1.5rem;
++    padding-right: 1.5rem;
++    padding-top: 0;
++    padding-bottom: 0.5rem;
+     margin-top: -1rem;
++    width: 70vw;
++    height: 40vw;
+ }
+ 
+ .location-title {
+     background: #60150B;
+-    left: -3rem;
++    left: -2rem;
+     margin: 0;
++    width: 9rem;
+     padding: 0.5rem 1rem;
+     position: relative;
+     top: -2rem;
+ }
++
+diff --git a/templates/attending.html b/templates/attending.html
+index 2609385..2ebb75a 100644
+--- a/templates/attending.html
++++ b/templates/attending.html
+@@ -12,6 +12,7 @@
+         The quick brown fox jumps over the lazy dog.
+         The quick brown fox jumps over the lazy dog.
+     </p>
++    <h2>DOWNLOADS</h2>
+     <h2 class="delegate-package-label pdf-label">
+         <img src="/resources/images/placeholders/arrow-placeholder.png" alt="arrow" class="dropdown-arrow"/>
+         Delegate Package
+@@ -26,11 +27,7 @@
+     <div id="official-rulebook-pdf"></div>
+     <script>PDFObject.embed("/resources/hosted-files/placeholder.pdf", "#official-rulebook-pdf");</script>
+     <!-- Mobile only below -->
+-    <h2 class="delegate-package-label mobile">
+-        <a href="/resources/hosted-files/placeholder.pdf">Delegate Package</a>
+-    </h2>
+-    <h2 class="official-rulebook-label mobile">
+-        <a href="/resources/hosted-files/placeholder.pdf">Official Rulebook</a>
+-    </h2>
++    <a class="delegate-package-label-mobile" href="/resources/hosted-files/placeholder.pdf">Delegate Package</a>
++    <a class="official-rulebook-label-mobile" href="/resources/hosted-files/placeholder.pdf">Official Rulebook</a>
+ </div>
+ {{end}}
+diff --git a/templates/base.html b/templates/base.html
+index bfaf7d9..fa059da 100644
+--- a/templates/base.html
++++ b/templates/base.html
+@@ -57,7 +57,7 @@
+                 <li>
+                     <a href="/sponsors">SPONSORSHIP</a>
+                     <div class="nav-dropdown">
+-                        <a href="/sponsors">Our Sponsors</a>
++                        <a href="/sponsors#">Our Sponsors</a>
+                         <a href="/sponsors/package">Sponsorship Package</a>
+                     </div>
+                 </li>
+diff --git a/templates/calgary.html b/templates/calgary.html
+index 9e29976..b9da6bb 100644
+--- a/templates/calgary.html
++++ b/templates/calgary.html
+@@ -15,6 +15,6 @@
+ </div>
+ <div class="calgary-content flex">
+     {{template "didyouknow"}}
+-    {{template "location"}}
++    {{template "location" .}}
+ </div>
+ {{end}}
+diff --git a/templates/committee.html b/templates/committee.html
+index 6ecfc02..e0b9adf 100644
+--- a/templates/committee.html
++++ b/templates/committee.html
+@@ -19,7 +19,9 @@
+ <div class="directors-listing flex">
+     {{range .}}
+     <div class="directors-mini">
+-        <h2 class="directors-mini-title">{{.Role}}</h2>
++        <div class="directors-mini-title">
++            <h2>{{.Role}}</h2>
++        </div>
+         <img src="{{.PicturePath}}" alt="directors-member" class="{{.Class}}" />
+         <div class="directors-mini-name">
+             <h2>{{.Name}}</h2>
+diff --git a/templates/hotel.html b/templates/hotel.html
+index 60bd52e..914429c 100644
+--- a/templates/hotel.html
++++ b/templates/hotel.html
+@@ -14,6 +14,6 @@
+     </div>
+ </div>
+ <div class="hotel-content flex">
+-    {{template "location"}}
++    {{template "location" .}}
+ </div>
+ {{end}}
+diff --git a/templates/sponsors.html b/templates/sponsors.html
+index 94def98..aad1092 100644
+--- a/templates/sponsors.html
++++ b/templates/sponsors.html
+@@ -8,27 +8,27 @@
+             <img src="/resources/images/sponsors/lead/shell.png" alt="Shell" />
+         </div>
+     </div>
+-    <h1>GOLD SPONSORS</h1>
+-    <hr>
+     <div class="gold-sponsors sponsors-container flex">
++        <h1>GOLD SPONSORS</h1>
++        <hr>
+         <div class="flex">
+             <img src="/resources/images/sponsors/gold/cloudian.png" alt="Cloudian" />
+             <img src="/resources/images/sponsors/gold/mohawk.png" alt="Mohawk" />
+             <img src="/resources/images/sponsors/gold/statoil.png" alt="Stat Oil" />
+         </div>
+     </div>
+-    <h1>SILVER SPONSORS</h1>
+-    <hr>
+     <div class="silver-sponsors sponsors-container flex">
++        <h1>SILVER SPONSORS</h1>
++        <hr>
+         <div class="flex">
+             <img src="/resources/images/sponsors/silver/asus.png" alt="ASUS" />
+             <img src="/resources/images/sponsors/silver/conocophillips.png" alt="Conoco Phillips" />
+             <img src="/resources/images/sponsors/silver/csi.png" alt="CSI" />
+         </div>
+     </div>
+-    <h1>BRONZE SPONSORS</h1>
+-    <hr>
+     <div class="bronze-sponsors sponsors-container flex">
++        <h1>BRONZE SPONSORS</h1>
++        <hr>
+         <div class="flex">
+             <img src="/resources/images/sponsors/bronze/mcdonalds.png" alt="McDonalds" />
+             <h2>Mcdonalds</h2>
+diff --git a/templates/uofc.html b/templates/uofc.html
+index 0813c10..6fe85a5 100644
+--- a/templates/uofc.html
++++ b/templates/uofc.html
+@@ -15,6 +15,6 @@
+ </div>
+ <div class="uc-content flex">
+     {{template "didyouknow"}}
+-    {{template "location"}}
++    {{template "location" .}}
+ </div>
+ {{end}}
+diff --git a/templates/widgets/location.html b/templates/widgets/location.html
+index 4cc7bc5..19c8d8c 100644
+--- a/templates/widgets/location.html
++++ b/templates/widgets/location.html
+@@ -1,6 +1,7 @@
+ {{define "location"}}
+ <div class="location">
+     <h1 class="location-title">Location</h1>
+-    <img src="/resources/images/placeholders/map-placeholder.jpg" alt="location-map" />
++    <iframe frameborder="0" src="{{.LocationSource}}" allowfullscreen></iframe>
++<!-- <iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=univeristy%20of%20calgary&key=AIzaSyDtvcBmchfCPR_BxsOhP8UWOvamaNEQbQA" allowfullscreen></iframe> -->
+ </div>
+ {{end}}
