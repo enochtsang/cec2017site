@@ -18,13 +18,17 @@
     <form class="contact-form" autocomplete="off">
         <div class="contact-left">
             <input type="text" name="name" placeholder="Name">
-            <input type="text" name="school-organization" placeholder="School or Organization">
+            <input type="text" name="organization" placeholder="School or Organization">
             <input type="email" name="return-email" placeholder="Email">
             <div class="g-recaptcha" data-sitekey="6Lce7SYTAAAAAIrX7phaDRlvkkJDzmzHWcGhS1GN"></div>
+            <input type="text" name="LeaveBlank" placeholder="LeaveBlank" style="position: absolute; left: -999em;"> <!-- Honeypot for spam -->
         </div>
         <div class="contact-right">
             <textarea name="message" cols=50 placeholder="Message"></textarea>
-            <input type="submit" name="Submit" value="Submit">
+            <div class="submit-area">
+                <p class="contact-error"></p>
+                <input type="submit" name="Submit" value="Submit">
+            </div>
         </div>
     </form>
     <div class="contact-sent">

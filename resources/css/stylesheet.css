@@ -1,3 +1,101 @@
+/* RESET *//
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+body {
+    line-height:1;
+}
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section {
+    display:block;
+}
+
+nav ul {
+    list-style:none;
+}
+
+blockquote, q {
+    quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content:'';
+    content:none;
+}
+
+a {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+/* change colours to suit your needs */
+ins {
+    background-color:#ff9;
+    color:#000;
+    text-decoration:none;
+}
+
+/* change colours to suit your needs */
+mark {
+    background-color:#ff9;
+    color:#000; 
+    font-style:italic;
+    font-weight:bold;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+    border-bottom:1px dotted;
+    cursor:help;
+}
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+/* change border colour to suit your needs */
+hr {
+    display:block;
+    height:1px;
+    border:0;   
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
+}
+
+input, select {
+    vertical-align:middle;
+}
+
+/* END RESET */
+
 html {
     min-height: 100%;
     position: relative;
@@ -419,7 +517,8 @@ footer > div > p {
 }
 
 .directors-mini img:hover {
-re    cursor: pointer;
+    border: 0.5rem solid orange;
+    cursor: pointer;
 
     transition: .2s;
     -webkit-transition: .2s;
@@ -819,6 +918,10 @@ re    cursor: pointer;
     display: none;
 }
 
+.delegate-package-label-mobile, .official-rulebook-label-mobile {
+    display: none;
+}
+
 @media(max-width: 1080px) {
     .attending {
         text-align: center;
@@ -891,6 +994,50 @@ input[type="text"], input[type="email"] {
     padding: 0.3rem;
     outline: none;
     background-color: white;
+    transition: background-color 1s;
+    -webkit-transition: background-color 1s;
+    -o-transition:  background-color 1s;
+    -moz-transition:  background-color 1s;
+}
+
+.contact-form textarea {
+    padding: 0.5rem;
+    border-radius: 2px;
+    border: 0.1rem solid lightgrey;
+    background-color: white;
+    font-size: 1rem;
+    font-family: 'Raleway', sans-serif;
+    color: #444;
+    height: 15rem;
+    width: 23.8rem;
+    transition: background-color 1s;
+    -webkit-transition: background-color 1s;
+    -o-transition:  background-color 1s;
+    -moz-transition:  background-color 1s;
+    outline: none;
+}
+
+.contact-right {
+    width: 25rem;
+}
+
+.submit-area {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+.contact-error {
+    color: red;
+    padding: 0.6rem;
+    font-size: 0.9rem;
+    margin: 0;
+    margin-top: 1rem;
+    box-shadow: 1px 1px 1px white;
+    -webkit-box-shadow: 1px 1px 1px white;
+    -moz-box-shadow: 1px 1px 1px white;
+    text-shadow: 1px 1px 1px white;
 }
 
 input[type="submit"] {
@@ -905,28 +1052,20 @@ input[type="submit"] {
     -moz-box-shadow: 1px 1px 1px #4C6E91;
     text-shadow: 1px 1px 1px #5079A3;
     margin-top: 1rem;
-    float: right;
-}
-
-.contact-form textarea {
-    padding: 0.5rem;
-    border-radius: 2px;
-    border: 0.1rem solid lightgrey;
-    background-color: white;
-    font-size: 1rem;
-    font-family: 'Raleway', sans-serif;
-    color: #444;
-    height: 15rem;
-    width: 23.8rem;
-}
-
-.contact-right {
-    width: 25rem;
+    outline: 0;
 }
 
 input[type="submit"]:hover {
-    background: #F30;
+    background: #F42;
     cursor: pointer;
+}
+
+input[type="submit"]:active {
+    box-shadow: 0px 0px 1px #4C6E91;
+    -webkit-box-shadow: 0px 0px 1px #4C6E91;
+    -moz-box-shadow: 0px 0px 1px #4C6E91;
+    text-shadow: 0px 0px 1px #5079A3;
+    background: #D00;
 }
 
 .contact-sent {
@@ -935,7 +1074,6 @@ input[type="submit"]:hover {
     margin-top: 1.4rem;
     height: 1.8rem;
 }
-
 
 @media(max-width: 1080px) {
     .contact-form {
