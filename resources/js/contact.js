@@ -7,10 +7,11 @@ $(document).ready(function(){
             $(".contact-form input[name=return-email]"),
             $(".contact-form textarea[name=message]")
         ];
-        if($(".contact-form input[name=other]").val() !== "") {
+        if($(".contact-form input[name=LeaveBlank]").val() !== "") {
             goodInput = false;
         }
 
+        // Check blank fields
         for(var i = 0; i < inputs.length; ++i) {
             if(inputs[i].val() === "") {
                 inputs[i].css("background-color", "#FCC");
@@ -23,6 +24,7 @@ $(document).ready(function(){
             }
         }
 
+        // Check valid email
         if(goodInput) {
             if(!validateEmail(inputs[2].val())) {
                 inputs[2].css("background-color", "#FCC");
@@ -33,6 +35,15 @@ $(document).ready(function(){
             } else {
                 inputs[2].css("background-color", "white");
             }
+        }
+
+        // Check captcha filled out
+        var captchaResponse = grecaptcha.getResponse()
+        if(captchaResponse.length == 0) {
+            goodInput = false;
+            $('.contact-error').fadeOut(function() {
+                $('.contact-error').html('Please fill in the captcha').fadeIn();
+            });
         }
 
         if(!goodInput) {
@@ -48,7 +59,8 @@ $(document).ready(function(){
             name: inputs[0].val(),
             organization: inputs[1].val(),
             returnEmail: inputs[2].val(),
-            message: inputs[3].val()
+            message: inputs[3].val(),
+            captcha: captchaResponse
         });
 
         $('.contact-form .submit-area').fadeOut(function() {
