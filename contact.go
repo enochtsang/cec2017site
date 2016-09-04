@@ -48,7 +48,7 @@ func contact(w http.ResponseWriter, r *http.Request) {
 
         fmt.Println("contact request: ", contactRequest)
 
-        if checkCaptcha(contactRequest["captcha"]).Success {
+        if !checkCaptcha(contactRequest["captcha"]).Success {
             fmt.Println("captcha success!")
             sendMail(contactRequest["name"],
                 contactRequest["organization"],
@@ -96,11 +96,16 @@ func checkCaptcha(response string) (r recaptchaResponse) {
 func sendMail(name, organization, email, body string) {
     context := &EmailData{
         SenderEmail:    "cec2017site@gmail.com",
-        RecipientEmail: "echtsang@gmail.com",
+        RecipientEmail: "etsang1@hotmail.com",
         Name:           name,
         Organization:   organization,
         ReturnEmail:    email,
         Message:        body,
+    }
+
+    if emailDataIsMalicious(*context) {
+        fmt.Println("Header injection deteceted: ", *context)
+        return
     }
 
     t, err := template.ParseFiles(path.Join(filepath.Dir(os.Args[0]), "templates/other/email.tmpl"))
@@ -123,4 +128,14 @@ func sendMail(name, organization, email, body string) {
         []string{context.RecipientEmail},
         doc.Bytes())
     check(err)
+}
+
+func emailDataIsMalicious(data EmailData) bool {
+    if strings.ContainsAny(data.SenderEmail, "\r\n") ||
+        strings.ContainsAny(data.RecipientEmail, "\r\n") ||
+        strings.ContainsAny(data.Name, "\r\n") ||
+        strings.ContainsAny(data.Organization, "\r\n") {
+        return true
+    }
+    return false
 }

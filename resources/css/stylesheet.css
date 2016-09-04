@@ -84,7 +84,7 @@ table {
 hr {
     display:block;
     height:1px;
-    border:0;   
+    border:0;
     border-top:1px solid #cccccc;
     margin:1em 0;
     padding:0;
@@ -1026,6 +1026,7 @@ input[type="text"], input[type="email"] {
     flex-direction: row;
     justify-content: flex-end;
     align-items: flex-start;
+    width: 100%;
 }
 
 .contact-error {
@@ -1080,6 +1081,7 @@ input[type="submit"]:active {
         flex-direction: column;
         align-items: center;
         width: 80%;
+        margin-bottom: 5rem;
     }
 
     input[type="text"], input[type="email"], input[type="submit"], .contact-form textarea {
@@ -1094,7 +1096,6 @@ input[type="submit"]:active {
     }
 
     input[type="submit"] {
-        margin-bottom: 5rem;
         width: 50%;
         float: none;
     }
@@ -1116,6 +1117,16 @@ input[type="submit"]:active {
         flex-direction: column;
         align-items: center;
         width: 100%;
+    }
+
+    .submit-area {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .contact-error {
+        font-size: 3rem;
+        text-align-last: center;
     }
 
     .contact-sent {

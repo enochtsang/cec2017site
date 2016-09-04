@@ -7,6 +7,8 @@ $(document).ready(function(){
             $(".contact-form input[name=return-email]"),
             $(".contact-form textarea[name=message]")
         ];
+
+        //Check honeyput
         if($(".contact-form input[name=LeaveBlank]").val() !== "") {
             goodInput = false;
         }
@@ -16,7 +18,7 @@ $(document).ready(function(){
             if(inputs[i].val() === "") {
                 inputs[i].css("background-color", "#FCC");
                 $('.contact-error').fadeOut(function() {
-                    $('.contact-error').html('Please fill in all fields').fadeIn();
+                    $('.contact-error').html('Fill in all fields').fadeIn();
                 });
                 goodInput = false;
             } else {
@@ -29,7 +31,7 @@ $(document).ready(function(){
             if(!validateEmail(inputs[2].val())) {
                 inputs[2].css("background-color", "#FCC");
                 $('.contact-error').fadeOut(function() {
-                    $('.contact-error').html('Please provide a valid email address').fadeIn();
+                    $('.contact-error').html('Invalid email address').fadeIn();
                 });
                 goodInput = false;
             } else {
@@ -39,10 +41,11 @@ $(document).ready(function(){
 
         // Check captcha filled out
         var captchaResponse = grecaptcha.getResponse()
+        console.log(captchaResponse)
         if(captchaResponse.length == 0) {
             goodInput = false;
             $('.contact-error').fadeOut(function() {
-                $('.contact-error').html('Please fill in the captcha').fadeIn();
+                $('.contact-error').html('Captcha not completed').fadeIn();
             });
         }
 
