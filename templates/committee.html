@@ -3,7 +3,7 @@
 <div class="directors-splash content-splash">
     {{range .}}
     <div class="director flex {{.Class}}">
-        <img src="{{.PicturePath}}" alt="directors-member" />
+        <img src="{{.PicturePath}}" alt="directors-member" class="director-main-img"/>
         <div class="splash-info">
             <h3>{{.Name}}</h3>
             <h3>{{.Role}}</h3>
@@ -19,13 +19,11 @@
 <div class="directors-listing flex">
     {{range .}}
     <div class="directors-mini">
-        <div class="directors-mini-title">
-            <h2>{{.Role}}</h2>
-        </div>
         <img src="{{.PicturePath}}" alt="directors-member" class="{{.Class}}" />
         <div class="directors-mini-name">
             <h2>{{.Name}}</h2>
         </div>
+        <h2 class="directors-mini-title">{{.Role}}</h2>
     </div>
     {{end}}
 </div>
