@@ -200,15 +200,10 @@ header > div {
 
 .info-bar > div:first-child {
     text-align: right;
-    width: 25rem;
 }
 
 .info-bar > div:nth-child(2) {
     padding: 0 1rem;
-}
-
-.info-bar div:last-child {
-    width: 25rem;
 }
 
 .header-logo {
@@ -232,6 +227,14 @@ header > div {
     .info-bar {
         padding-top: 0.6rem;
         padding-bottom: 0.6rem;
+    }
+
+    .info-bar div:first-child {
+        width: 25rem;
+    }
+
+    .info-bar div:last-child {
+        width: 25rem;
     }
 
     .header-logo {
@@ -402,7 +405,6 @@ footer > div > p {
 .home-splash {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/resources/images/main-backdrop.jpg");
     flex-direction: column;
-    height: 100%;
 }
 
 .home-splash h1 {
@@ -818,7 +820,6 @@ footer > div > p {
 /*** sponsors.html ***/
 
 .sponsors h1 {
-    font-family: 'Cinzel', serif;
     margin: 0;
     margin-top: 2rem;
     padding: 1rem 1rem 0.5rem 1rem;
@@ -894,8 +895,6 @@ footer > div > p {
 .sponsor-package {
     display: flex;
     flex-direction: column;
-    text-align: center;
-    align-items: center;
     margin: auto;
     margin-top: 2rem;
     padding-bottom: 1rem;
@@ -908,8 +907,10 @@ footer > div > p {
 }
 
 #sponsorship-package-pdf {
-    width: 40rem;
-    height: 54rem;
+    min-width: 40rem;
+    min-height: 54rem;
+    width: 50vw;
+    height: 60vw;
 }
 
 /*** attending.html ***/
@@ -917,17 +918,11 @@ footer > div > p {
 .attending {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
     margin: auto;
     margin-top: 2rem;
     min-width: 50rem;
     padding-bottom: 1rem;
     width: 50%;
-}
-
-.attending p {
-    font-size: 1.3rem;
 }
 
 .attending .dropdown-arrow {
