@@ -504,6 +504,7 @@ footer > div > p {
 .directors-mini img {
     border: 0.5rem solid black;
     height: 12rem;
+    box-shadow: 10px 10px 5px #888888;
 
     transition: .2s;
     -webkit-transition: .2s;
@@ -538,6 +539,7 @@ footer > div > p {
     background: #60150B;
     margin: 0;
     padding: 0.5rem 1rem;
+    box-shadow: 10px 10px 5px #888888;
 }
 
 @media(max-width: 1080px) {
