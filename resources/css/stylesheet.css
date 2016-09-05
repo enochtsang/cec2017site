@@ -61,7 +61,7 @@ ins {
 /* change colours to suit your needs */
 mark {
     background-color:#ff9;
-    color:#000; 
+    color:#000;
     font-style:italic;
     font-weight:bold;
 }
@@ -133,11 +133,6 @@ h3 {
 
 .content-splash {
     color: white;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    -webkit-background-size: cover;
-    background-size: cover;
-    background-position: center;
     padding: 2rem;
     height: 60vh;
 }
@@ -474,6 +469,10 @@ footer > div > p {
     display: none;
 }
 
+.director h3 {
+    font-size: 1.4rem;
+}
+
 .directors-splash img {
     height: 18rem;
     margin-right: 4rem;
@@ -515,6 +514,7 @@ footer > div > p {
 .directors-mini img:hover {
     border: 0.5rem solid yellow;
     cursor: pointer;
+    -webkit-filter: brightness(110%);
 
     transition: .2s;
     -webkit-transition: .2s;
@@ -539,7 +539,12 @@ footer > div > p {
     background: #60150B;
     margin: 0;
     padding: 0.5rem 1rem;
+    border: 0.19rem solid black;
     box-shadow: 10px 10px 5px #888888;
+    transition: .2s;
+    -webkit-transition: .2s;
+    -o-transition:  .2s;
+    -moz-transition:  .2s;
 }
 
 @media(max-width: 1080px) {
@@ -559,7 +564,7 @@ footer > div > p {
 }
 
 .uc-info p {
-    margin-top: 3em;
+    margin-left: 5em;
 }
 
 .uc-content {
@@ -589,7 +594,6 @@ footer > div > p {
 
 .calgary-info p {
     margin-left: 5em;
-    margin-top: 5em;
 }
 
 .calgary-content {
@@ -619,17 +623,14 @@ footer > div > p {
 
 .hotel-info p {
     margin-left: 5em;
-    margin-top: 5em;
 }
 
 .hotel-content {
     flex-direction: column;
     margin: 3rem;
+    margin-bottom: 6rem;
 }
 
-.hotel-content > div {
-    margin: 2rem;
-}
 
 /*** competitions.html ***/
 
@@ -1169,6 +1170,7 @@ input[type="submit"]:active {
     padding: 0.5rem 1rem;
     position: relative;
     top: -2rem;
+    border: 0.2rem solid black;
 }
 
 .dyk-item {
@@ -1193,31 +1195,34 @@ input[type="submit"]:active {
 
 .location {
     color: white;
-    background: -webkit-linear-gradient(left top, #DDD, #555); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(bottom right, #DDD, #555); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(bottom right, #DDD, #555); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(to bottom right, #DDD, #555); /* Standard syntax (must be last) */
     box-shadow: 10px 10px 5px #888888;
-    padding-bottom: 0.9rem;
+    width: 60vw;
+    height: 30vw;
+    border: 0.2rem solid #444;
+    -webkit-border-image: -webkit-gradient(linear, left top, right bottom, from(#999), to(#DDD)) 1 ;
 }
 
 .location iframe {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-    padding-top: 0;
-    padding-bottom: 0.5rem;
-    margin-top: -1rem;
-    width: 70vw;
-    height: 40vw;
+    background-image: url("/resources/images/loading.gif");
+    background-color: #DDD;
+    background-repeat: no-repeat;
+    -moz-background-size: 5rem;
+    -o-background-size: 5rem;
+    -webkit-background-size: 5rem;
+    background-size: 5rem;
+    background-position: center;
+    width: 60vw;
+    height: 30vw;
 }
 
 .location-title {
+    position: relative;
+    top: -1rem;
+    left: -5rem;
     background: #60150B;
-    left: -2rem;
     margin: 0;
     width: 9rem;
     padding: 0.5rem 1rem;
-    position: relative;
-    top: -2rem;
+    border: 0.2rem solid black;
 }
 
