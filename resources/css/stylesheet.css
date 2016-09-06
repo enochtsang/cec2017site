@@ -589,7 +589,8 @@ footer > div > p {
 
 .uc-content {
     flex-direction: column;
-    margin: 3rem;
+    margin: 1rem;
+    margin-bottom: 4rem;
 }
 
 .uc-content > div {
@@ -618,7 +619,8 @@ footer > div > p {
 
 .calgary-content {
     flex-direction: column;
-    margin: 3rem;
+    margin: 1rem;
+    margin-bottom: 4rem;
 }
 
 .calgary-content > div {
@@ -1189,16 +1191,18 @@ input[type="submit"]:active {
 
 .didyouknow {
     color: white;
-    background: -webkit-linear-gradient(left top, #DDD, #555); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(bottom right, #DDD, #555); /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(bottom right, #DDD, #555); /* For Firefox 3.6 to 15 */
-    background: linear-gradient(to bottom right, #DDD, #555); /* Standard syntax (must be last) */
+    background: #888;
     box-shadow: 10px 10px 5px #888888;
     margin: 2.5rem;
     padding: 1rem;
+    -webkit-border-image: -webkit-gradient(linear, left top, right bottom, from(#999), to(#DDD)) 1 ;
+    width: 30vw;
+    height: 10vw;
+    padding-bottom: 4rem;
 }
 
 .dyk-title {
+    float: left;
     background: #60150B;
     left: -3rem;
     margin: 0;
@@ -1208,9 +1212,15 @@ input[type="submit"]:active {
     border: 0.2rem solid black;
 }
 
+.dyk-container {
+    background: black;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 2rem;
+}
+
 .dyk-item {
-    margin-top: -1rem;
-    text-align-last: center;
+    text-align: center;
 }
 
 .didyouknow img:first-child {
