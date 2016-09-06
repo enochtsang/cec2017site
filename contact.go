@@ -40,6 +40,7 @@ type EmailData struct {
 
 func contact(w http.ResponseWriter, r *http.Request) {
     if r.Method == "POST" {
+        log.Debug("Received contact POST Request from " + *r.RemoteAddr)
         contactRequest := make(map[string]string)
         r.ParseForm()
         for k, v := range r.Form {
@@ -49,30 +50,31 @@ func contact(w http.ResponseWriter, r *http.Request) {
         fmt.Println("contact request: ", contactRequest)
 
         if !checkCaptcha(contactRequest["captcha"]).Success {
-            fmt.Println("captcha success!")
             sendMail(contactRequest["name"],
                 contactRequest["organization"],
                 contactRequest["returnEmail"],
                 contactRequest["message"])
         } else {
-            fmt.Println("captcha fail :(")
+            log.Warning("contact POST request with failed captcha")
         }
 
     } else {
+        log.Debug("Loading contact page for " + *r.RemoteAddr)
         t := template.Must(template.ParseFiles(
             absPath("templates/base.html"),
             absPath("templates/contact.html")))
         err := t.ExecuteTemplate(w, "base", nil)
-        check(err)
+        check(err, true)
     }
 }
 
 func contact_faq(w http.ResponseWriter, r *http.Request) {
+    log.Debug("Loading FAQ page for " + *r.RemoteAddr)
     t := template.Must(template.ParseFiles(
         absPath("templates/base.html"),
         absPath("templates/faq.html")))
     err := t.ExecuteTemplate(w, "base", nil)
-    check(err)
+    check(err, true)
 }
 
 func checkCaptcha(response string) (r recaptchaResponse) {
@@ -104,17 +106,16 @@ func sendMail(name, organization, email, body string) {
     }
 
     if emailDataIsMalicious(*context) {
-        fmt.Println("Header injection deteceted: ", *context)
+        log.Warning("Found malicious emailData: ", *context)
         return
     }
 
     t, err := template.ParseFiles(path.Join(filepath.Dir(os.Args[0]), "templates/other/email.tmpl"))
-    check(err)
+    check(err, true)
 
     var doc bytes.Buffer
     err = t.Execute(&doc, context)
-    fmt.Println(doc.String())
-    check(err)
+    check(err, false)
 
     auth := smtp.PlainAuth("",
         context.SenderEmail,
@@ -122,12 +123,13 @@ func sendMail(name, organization, email, body string) {
         "smtp.gmail.com",
     )
 
+    log.Info("Sending email: ", doc.String())
     err = smtp.SendMail("smtp.gmail.com:587",
         auth,
         context.SenderEmail,
         []string{context.RecipientEmail},
         doc.Bytes())
-    check(err)
+    check(err, false)
 }
 
 func emailDataIsMalicious(data EmailData) bool {

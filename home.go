@@ -21,14 +21,16 @@ type Location struct {
 }
 
 func home(w http.ResponseWriter, r *http.Request) {
+    log.Debug("Loading home page for " + *r.RemoteAddr)
     t := template.Must(template.ParseFiles(
         absPath("templates/base.html"),
         absPath("templates/home.html")))
     err := t.ExecuteTemplate(w, "base", nil)
-    check(err)
+    check(err, true)
 }
 
 func home_committee(w http.ResponseWriter, r *http.Request) {
+    log.Debug("Loading committee page for " + *r.RemoteAddr)
     t := template.Must(template.ParseFiles(
         absPath("templates/base.html"),
         absPath("templates/committee.html")))
@@ -39,7 +41,7 @@ func home_committee(w http.ResponseWriter, r *http.Request) {
             Role:        "Chair",
             Phone:       "403-123-4567",
             Email:       "something@example.com",
-            PicturePath: "/resources/images/placeholders/directors-placeholder.jpg",
+            PicturePath: "/resources/images/placeholders/profile-placeholder.png",
             Info: ` The quick brown fox jumps over the lazy dog.
                     The quick brown fox jumps over the lazy dog.
                     The quick brown fox jumps over the lazy dog.
@@ -53,7 +55,7 @@ func home_committee(w http.ResponseWriter, r *http.Request) {
             Role:        "Executive Manager",
             Phone:       "403-123-4567",
             Email:       "something@example.com",
-            PicturePath: "/resources/images/placeholders/directors-placeholder.jpg",
+            PicturePath: "/resources/images/placeholders/profile-placeholder.png",
             Info: ` The quick brown fox jumps over the lazy dog.
                     The quick brown fox jumps over the lazy dog.
                     The quick brown fox jumps over the lazy dog.
@@ -67,7 +69,7 @@ func home_committee(w http.ResponseWriter, r *http.Request) {
             Role:        "Executive Manager",
             Phone:       "403-123-4567",
             Email:       "something@example.com",
-            PicturePath: "/resources/images/placeholders/directors-placeholder.jpg",
+            PicturePath: "/resources/images/placeholders/profile-placeholder.png",
             Info: ` The quick brown fox jumps over the lazy dog.
                     The quick brown fox jumps over the lazy dog.
                     The quick brown fox jumps over the lazy dog.
@@ -81,7 +83,7 @@ func home_committee(w http.ResponseWriter, r *http.Request) {
             Role:        "Executive Manager",
             Phone:       "403-123-4567",
             Email:       "something@example.com",
-            PicturePath: "/resources/images/placeholders/directors-placeholder.jpg",
+            PicturePath: "/resources/images/placeholders/profile-placeholder.png",
             Info: ` The quick brown fox jumps over the lazy dog.
                     The quick brown fox jumps over the lazy dog.
                     The quick brown fox jumps over the lazy dog.
@@ -95,7 +97,7 @@ func home_committee(w http.ResponseWriter, r *http.Request) {
             Role:        "Executive Manager",
             Phone:       "403-123-4567",
             Email:       "something@example.com",
-            PicturePath: "/resources/images/placeholders/directors-placeholder.jpg",
+            PicturePath: "/resources/images/placeholders/profile-placeholder.png",
             Info: ` The quick brown fox jumps over the lazy dog.
                     The quick brown fox jumps over the lazy dog.
                     The quick brown fox jumps over the lazy dog.
@@ -109,7 +111,7 @@ func home_committee(w http.ResponseWriter, r *http.Request) {
             Role:        "Executive Manager",
             Phone:       "403-123-4567",
             Email:       "something@example.com",
-            PicturePath: "/resources/images/placeholders/directors-placeholder.jpg",
+            PicturePath: "/resources/images/placeholders/profile-placeholder.png",
             Info: ` The quick brown fox jumps over the lazy dog.
                     The quick brown fox jumps over the lazy dog.
                     The quick brown fox jumps over the lazy dog.
@@ -123,7 +125,7 @@ func home_committee(w http.ResponseWriter, r *http.Request) {
             Role:        "Executive Manager",
             Phone:       "403-123-4567",
             Email:       "something@example.com",
-            PicturePath: "/resources/images/placeholders/directors-placeholder.jpg",
+            PicturePath: "/resources/images/placeholders/profile-placeholder.png",
             Info: ` The quick brown fox jumps over the lazy dog.
                     The quick brown fox jumps over the lazy dog.
                     The quick brown fox jumps over the lazy dog.
@@ -137,7 +139,7 @@ func home_committee(w http.ResponseWriter, r *http.Request) {
             Role:        "Executive Manager",
             Phone:       "403-123-4567",
             Email:       "something@example.com",
-            PicturePath: "/resources/images/placeholders/directors-placeholder.jpg",
+            PicturePath: "/resources/images/placeholders/profile-placeholder.png",
             Info: ` The quick brown fox jumps over the lazy dog.
                     The quick brown fox jumps over the lazy dog.
                     The quick brown fox jumps over the lazy dog.
@@ -151,7 +153,7 @@ func home_committee(w http.ResponseWriter, r *http.Request) {
             Role:        "Executive Manager",
             Phone:       "403-123-4567",
             Email:       "something@example.com",
-            PicturePath: "/resources/images/placeholders/directors-placeholder.jpg",
+            PicturePath: "/resources/images/placeholders/profile-placeholder.png",
             Info: ` The quick brown fox jumps over the lazy dog.
                     The quick brown fox jumps over the lazy dog.
                     The quick brown fox jumps over the lazy dog.
@@ -165,7 +167,7 @@ func home_committee(w http.ResponseWriter, r *http.Request) {
             Role:        "Executive Manager",
             Phone:       "403-123-4567",
             Email:       "something@example.com",
-            PicturePath: "/resources/images/placeholders/directors-placeholder.jpg",
+            PicturePath: "/resources/images/placeholders/profile-placeholder.png",
             Info: ` The quick brown fox jumps over the lazy dog.
                     The quick brown fox jumps over the lazy dog.
                     The quick brown fox jumps over the lazy dog.
@@ -175,10 +177,11 @@ func home_committee(w http.ResponseWriter, r *http.Request) {
         },
     }
     err := t.ExecuteTemplate(w, "base", committee)
-    check(err)
+    check(err, true)
 }
 
 func home_uofc(w http.ResponseWriter, r *http.Request) {
+    log.Debug("Loading uofc page for " + *r.RemoteAddr)
     t := template.Must(template.ParseFiles(
         absPath("templates/base.html"),
         absPath("templates/uofc.html"),
@@ -186,10 +189,11 @@ func home_uofc(w http.ResponseWriter, r *http.Request) {
         absPath("templates/widgets/location.html")))
     location := Location{"https://www.google.com/maps/embed/v1/place?q=univeristy%20of%20calgary&key=AIzaSyDtvcBmchfCPR_BxsOhP8UWOvamaNEQbQA&zoom=12"}
     err := t.ExecuteTemplate(w, "base", location)
-    check(err)
+    check(err, true)
 }
 
 func home_calgary(w http.ResponseWriter, r *http.Request) {
+    log.Debug("Loading calgary page for " + *r.RemoteAddr)
     t := template.Must(template.ParseFiles(
         absPath("templates/base.html"),
         absPath("templates/calgary.html"),
@@ -197,15 +201,16 @@ func home_calgary(w http.ResponseWriter, r *http.Request) {
         absPath("templates/widgets/location.html")))
     location := Location{"https://www.google.com/maps/embed/v1/place?q=calgary%20ab&key=AIzaSyDtvcBmchfCPR_BxsOhP8UWOvamaNEQbQA&zoom=4"}
     err := t.ExecuteTemplate(w, "base", location)
-    check(err)
+    check(err, true)
 }
 
 func home_hotel(w http.ResponseWriter, r *http.Request) {
+    log.Debug("Loading hotel page for " + *r.RemoteAddr)
     t := template.Must(template.ParseFiles(
         absPath("templates/base.html"),
         absPath("templates/hotel.html"),
         absPath("templates/widgets/location.html")))
     location := Location{"https://www.google.com/maps/embed/v1/place?q=radisson%20hotel%20calgary&key=AIzaSyDtvcBmchfCPR_BxsOhP8UWOvamaNEQbQA&zoom=12"}
     err := t.ExecuteTemplate(w, "base", location)
-    check(err)
+    check(err, true)
 }

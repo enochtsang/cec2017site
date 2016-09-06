@@ -5,6 +5,8 @@ import (
     "net/http"
 )
 
+// var log defined in cec2017site.go
+
 type Competition struct {
     ID    string
     Title string
@@ -12,6 +14,7 @@ type Competition struct {
 }
 
 func competitions(w http.ResponseWriter, r *http.Request) {
+    log.Debug("Loading competitions page for " + *r.RemoteAddr)
     t := template.Must(template.ParseFiles(
         absPath("templates/base.html"),
         absPath("templates/competitions.html")))
@@ -66,5 +69,5 @@ func competitions(w http.ResponseWriter, r *http.Request) {
         },
     }
     err := t.ExecuteTemplate(w, "base", competitions)
-    check(err)
+    check(err, true)
 }
