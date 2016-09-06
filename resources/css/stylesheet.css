@@ -168,6 +168,7 @@ h3 {
     .splash-info {
         max-width: 50vw;
         text-align: center;
+        font-size: 1.8rem;
     }
 }
 
@@ -337,7 +338,7 @@ header > div {
 
 .mobile-nav-bar a {
     color: white;
-    font-size: 2.2rem;
+    font-size: 2rem;
 }
 
 .mobile-nav-controller {
@@ -564,6 +565,10 @@ footer > div > p {
         padding: 0;
     }
 
+    .directors-splash h3 {
+        font-size: 2rem;
+    }
+
     .director p {
         width: 100%;
     }
@@ -598,6 +603,9 @@ footer > div > p {
 }
 
 @media(max-width: 1080px) {
+    .uc-info p {
+        margin-left: 2em;
+    }
     .uc-content {
         margin-bottom: 10rem;
     }
@@ -628,6 +636,10 @@ footer > div > p {
 }
 
 @media(max-width: 1080px) {
+    .calgary-info p {
+        margin-left: 2em;
+    }
+
     .calgary-content {
         margin-bottom: 10rem;
     }
@@ -653,6 +665,11 @@ footer > div > p {
     margin-bottom: 6rem;
 }
 
+@media(max-width: 1080px) {
+    .hotel-info p {
+        margin-left: 2em;
+    }
+}
 
 /*** competitions.html ***/
 
@@ -905,6 +922,10 @@ footer > div > p {
     width: 50%;
 }
 
+.sponsor-package h1 {
+    width: 100%
+}
+
 .sponsor-package p {
     font-size:  1.3rem;
 }
@@ -912,6 +933,24 @@ footer > div > p {
 #sponsorship-package-pdf {
     width: 40rem;
     height: 54rem;
+}
+
+.sponsorship-package-label-mobile {
+    display: none;
+    font-size: 1.6rem;
+    color: #F20;
+    width: 100%
+    margin: 2rem;
+}
+
+@media(max-width: 1080px) {
+    #sponsorship-package-pdf {
+        display: none;
+    }
+
+    .sponsorship-package-label-mobile {
+        display: block;
+    }
 }
 
 /*** attending.html ***/
@@ -941,6 +980,10 @@ footer > div > p {
     transition: transform 0.1s;
 }
 
+.download-title {
+    width: 100%;
+}
+
 #delegate-package-pdf {
     width: 40rem;
     height: 54rem;
@@ -955,6 +998,10 @@ footer > div > p {
 
 .delegate-package-label-mobile, .official-rulebook-label-mobile {
     display: none;
+    font-size: 1.6rem;
+    color: #F20;
+    width: 100%;
+    margin: 2rem;
 }
 
 @media(max-width: 1080px) {
@@ -962,9 +1009,8 @@ footer > div > p {
         text-align: center;
     }
 
-    .delegate-package-pdf, .official-rulebook-label-mobile {
+    .delegate-package-label-mobile, .official-rulebook-label-mobile {
         display: block;
-        margin: 2rem;
     }
 
     .pdf-label {
@@ -980,17 +1026,17 @@ footer > div > p {
 /*** contact.html ***/
 
 .contact-splash {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/resources/images/placeholders/backdrop-placeholder.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/resources/images/placeholders/contact-backdrop-placeholder.jpg");
     font-size: 1.1rem;
 }
 
 .contact-splash a {
-    color: green;
+    color: #F20;
 }
 
 
 .contact-splash a:hover {
-    color: red;
+    color: #F64;
 }
 
 .contact-content {
@@ -1185,55 +1231,6 @@ input[type="submit"]:active {
     padding-bottom: 1rem;
     text-align: center;
     width: 20%;
-}
-
-/*** didyouknow.html ***/
-
-.didyouknow {
-    color: white;
-    background: #888;
-    box-shadow: 10px 10px 5px #888888;
-    margin: 2.5rem;
-    padding: 1rem;
-    -webkit-border-image: -webkit-gradient(linear, left top, right bottom, from(#999), to(#DDD)) 1 ;
-    width: 30vw;
-    height: 10vw;
-    padding-bottom: 4rem;
-}
-
-.dyk-title {
-    float: left;
-    background: #60150B;
-    left: -3rem;
-    margin: 0;
-    padding: 0.5rem 1rem;
-    position: relative;
-    top: -2rem;
-    border: 0.2rem solid black;
-}
-
-.dyk-container {
-    background: black;
-    width: 100%;
-    height: 100%;
-    padding-bottom: 2rem;
-}
-
-.dyk-item {
-    text-align: center;
-}
-
-.didyouknow img:first-child {
-    -ms-filter: "FlipH";
-    -o-transform: scaleX(-1);
-    -webkit-transform: scaleX(-1);
-    filter: FlipH;
-    transform: scaleX(-1);
-}
-
-.dyk-icon {
-    height: 1rem;
-    margin: 0.5rem;
 }
 
 /*** location.html ***/
