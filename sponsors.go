@@ -6,7 +6,7 @@ import (
 )
 
 func sponsors(w http.ResponseWriter, r *http.Request) {
-	log.Debug("Loading sponsors page for " + *r.RemoteAddr)
+	log.Debug("Loading sponsors page for " + r.RemoteAddr)
 	t := template.Must(template.ParseFiles(
 		absPath("templates/base.html"),
 		absPath("templates/sponsors.html")))
@@ -15,7 +15,7 @@ func sponsors(w http.ResponseWriter, r *http.Request) {
 }
 
 func sponsors_package(w http.ResponseWriter, r *http.Request) {
-	log.Debug("Loading sponsors_package page for " + *r.RemoteAddr)
+	log.Debug("Loading sponsors_package page for " + r.RemoteAddr)
 	t := template.Must(template.ParseFiles(
 		absPath("templates/base.html"),
 		absPath("templates/sponsors_package.html")))

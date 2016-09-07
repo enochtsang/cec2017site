@@ -3,23 +3,38 @@ package main
 import (
     "github.com/op/go-logging"
     "gopkg.in/natefinch/lumberjack.v2"
+    "gopkg.in/yaml.v2"
+    "io/ioutil"
     "net/http"
     "os"
     "path"
     "path/filepath"
+    "strconv"
+    "time"
 )
 
 var log = logging.MustGetLogger("gpu-test-controller")
 
-func check(err error, exit bool) {
-    defer func() {
-        if r := recover(); r != nil {
-            log.Critical(r)
-        }
-    }()
+type ConfigInfo struct {
+    Port     int    `yaml:"Port"`
+    CertFile string `yaml:"CertFile"`
+    KeyFile  string `yaml:"KeyFile"`
+    LogFile  string `yaml:"LogFile"`
+}
 
-    if err != nil {
-        panic(err)
+func check(err error, exit bool) {
+    if exit {
+        defer func() {
+            if r := recover(); r != nil {
+                log.Critical(r)
+                os.Exit(1)
+            }
+        }()
+        if err != nil {
+            panic(err)
+        }
+    } else {
+        log.Error(err)
     }
 }
 
@@ -39,12 +54,18 @@ func faviconHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
+    configFile, err := ioutil.ReadFile(path.Join(filepath.Dir(os.Args[0]), "config.yml"))
+    check(err, true)
+    var config ConfigInfo
+    err = yaml.Unmarshal(configFile, &config)
+    check(err, true)
+
     // Intialize Logging
     logFormat := logging.MustStringFormatter(
         `%{time:15:04:05} [%{level}] ▶ %{message}`,
     )
     lumberLog := lumberjack.Logger{
-        Filename:   "/var/log/cec2017site/cec2017site.log",
+        Filename:   config.LogFile,
         MaxSize:    999999999, // megabytes
         MaxBackups: 0,
         MaxAge:     0, //days
@@ -76,7 +97,8 @@ func main() {
     http.HandleFunc("/favicon.ico", faviconHandler)
 
     // Run Site
-    log.Notice("CEC 2017 Site Running on 8443")
-    err := http.ListenAndServeTLS(":8443", absPath("temp.crt"), absPath("temp.key"), nil)
+    log.Notice("CEC 2017 Site running on 8443")
+    err = http.ListenAndServeTLS(":"+strconv.Itoa(config.Port), absPath(config.CertFile), absPath(config.KeyFile), nil)
     check(err, true)
+    log.Notice("CEC 2017 Site closing")
 }

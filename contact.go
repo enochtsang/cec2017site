@@ -40,7 +40,7 @@ type EmailData struct {
 
 func contact(w http.ResponseWriter, r *http.Request) {
     if r.Method == "POST" {
-        log.Debug("Received contact POST Request from " + *r.RemoteAddr)
+        log.Debug("Received contact POST Request from " + r.RemoteAddr)
         contactRequest := make(map[string]string)
         r.ParseForm()
         for k, v := range r.Form {
@@ -59,7 +59,7 @@ func contact(w http.ResponseWriter, r *http.Request) {
         }
 
     } else {
-        log.Debug("Loading contact page for " + *r.RemoteAddr)
+        log.Debug("Loading contact page for " + r.RemoteAddr)
         t := template.Must(template.ParseFiles(
             absPath("templates/base.html"),
             absPath("templates/contact.html")))
@@ -69,7 +69,7 @@ func contact(w http.ResponseWriter, r *http.Request) {
 }
 
 func contact_faq(w http.ResponseWriter, r *http.Request) {
-    log.Debug("Loading FAQ page for " + *r.RemoteAddr)
+    log.Debug("Loading FAQ page for " + r.RemoteAddr)
     t := template.Must(template.ParseFiles(
         absPath("templates/base.html"),
         absPath("templates/faq.html")))

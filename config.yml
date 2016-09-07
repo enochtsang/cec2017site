@@ -1,0 +1,5 @@
+---
+Port: 8443
+CertFile: "temp.crt"
+KeyFile: "temp.key"
+LogFile: "/var/log/cec2017site/cec2017site.log"

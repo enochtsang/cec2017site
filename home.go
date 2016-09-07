@@ -21,7 +21,7 @@ type Location struct {
 }
 
 func home(w http.ResponseWriter, r *http.Request) {
-    log.Debug("Loading home page for " + *r.RemoteAddr)
+    log.Debug("Loading home page for " + r.RemoteAddr)
     t := template.Must(template.ParseFiles(
         absPath("templates/base.html"),
         absPath("templates/home.html")))
@@ -30,7 +30,7 @@ func home(w http.ResponseWriter, r *http.Request) {
 }
 
 func home_committee(w http.ResponseWriter, r *http.Request) {
-    log.Debug("Loading committee page for " + *r.RemoteAddr)
+    log.Debug("Loading committee page for " + r.RemoteAddr)
     t := template.Must(template.ParseFiles(
         absPath("templates/base.html"),
         absPath("templates/committee.html")))
@@ -181,7 +181,7 @@ func home_committee(w http.ResponseWriter, r *http.Request) {
 }
 
 func home_uofc(w http.ResponseWriter, r *http.Request) {
-    log.Debug("Loading uofc page for " + *r.RemoteAddr)
+    log.Debug("Loading uofc page for " + r.RemoteAddr)
     t := template.Must(template.ParseFiles(
         absPath("templates/base.html"),
         absPath("templates/uofc.html"),
@@ -193,7 +193,7 @@ func home_uofc(w http.ResponseWriter, r *http.Request) {
 }
 
 func home_calgary(w http.ResponseWriter, r *http.Request) {
-    log.Debug("Loading calgary page for " + *r.RemoteAddr)
+    log.Debug("Loading calgary page for " + r.RemoteAddr)
     t := template.Must(template.ParseFiles(
         absPath("templates/base.html"),
         absPath("templates/calgary.html"),
@@ -205,7 +205,7 @@ func home_calgary(w http.ResponseWriter, r *http.Request) {
 }
 
 func home_hotel(w http.ResponseWriter, r *http.Request) {
-    log.Debug("Loading hotel page for " + *r.RemoteAddr)
+    log.Debug("Loading hotel page for " + r.RemoteAddr)
     t := template.Must(template.ParseFiles(
         absPath("templates/base.html"),
         absPath("templates/hotel.html"),

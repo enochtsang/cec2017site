@@ -14,7 +14,7 @@ type Competition struct {
 }
 
 func competitions(w http.ResponseWriter, r *http.Request) {
-    log.Debug("Loading competitions page for " + *r.RemoteAddr)
+    log.Debug("Loading competitions page for " + r.RemoteAddr)
     t := template.Must(template.ParseFiles(
         absPath("templates/base.html"),
         absPath("templates/competitions.html")))
