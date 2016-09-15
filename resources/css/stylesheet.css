@@ -156,7 +156,7 @@ h3 {
     display: none;
 }
 
-@media(max-width: 1080px) {
+@media (max-width: 980px) {
     .content-splash {
         height: 40vh;
     }
@@ -221,7 +221,7 @@ header > div {
     width: 100%;
 }
 
-@media(max-width: 1080px) {
+@media (max-width: 980px) {
     header > div {
         font-size: 2rem;
     }
@@ -350,7 +350,7 @@ header > div {
     margin-bottom: 1rem;
 }
 
-@media(max-width: 1080px) {
+@media (max-width: 980px) {
     .nav-bar {
         display: none;
     }
@@ -373,7 +373,7 @@ footer {
     color: white;
 }
 
-@media(max-width: 1080px) {
+@media (max-width: 980px) {
     footer {
         height: 7rem;
         font-size: 2em;
@@ -427,7 +427,7 @@ footer > div > p {
     width: 20rem;
 }
 
-@media(max-width: 1080px) {
+@media (max-width: 980px) {
     .home-splash h1 {
         font-size: 4.5rem;
     }
@@ -556,7 +556,7 @@ footer > div > p {
     -moz-transition:  .2s;
 }
 
-@media(max-width: 1080px) {
+@media (max-width: 980px) {
     .directors-splash {
         padding: 0;
     }
@@ -598,7 +598,7 @@ footer > div > p {
     margin: 2rem;
 }
 
-@media(max-width: 1080px) {
+@media (max-width: 980px) {
     .uc-info p {
         margin-left: 2em;
     }
@@ -631,7 +631,7 @@ footer > div > p {
     margin: 2rem;
 }
 
-@media(max-width: 1080px) {
+@media (max-width: 980px) {
     .calgary-info p {
         margin-left: 2em;
     }
@@ -661,7 +661,7 @@ footer > div > p {
     margin-bottom: 6rem;
 }
 
-@media(max-width: 1080px) {
+@media (max-width: 980px) {
     .hotel-info p {
         margin-left: 2em;
     }
@@ -747,6 +747,7 @@ footer > div > p {
     -webkit-background-size: cover;
     background-size: cover;
     height: 20vw;
+    width: 40vw;
     color: white;
 }
 
@@ -786,7 +787,7 @@ footer > div > p {
     text-align: center;
 }
 
-@media(max-width: 1080px) {
+@media (max-width: 980px) {
     .competitions {
         flex-direction: column-reverse;
     }
@@ -816,6 +817,7 @@ footer > div > p {
 
     .competition-splash {
         height: 60vw;
+        width: 100vw;
     }
 
     .competition-splash h2 {
@@ -894,7 +896,7 @@ footer > div > p {
     margin-left: 0.3rem;
 }
 
-@media(max-width: 1080px) {
+@media (max-width: 980px) {
     .sponsors {
         margin-bottom: 10rem;
     }
@@ -939,7 +941,7 @@ footer > div > p {
     margin: 2rem;
 }
 
-@media(max-width: 1080px) {
+@media (max-width: 980px) {
     #sponsorship-package-pdf {
         display: none;
     }
@@ -1000,7 +1002,7 @@ footer > div > p {
     margin: 2rem;
 }
 
-@media(max-width: 1080px) {
+@media (max-width: 980px) {
     .attending {
         text-align: center;
     }
@@ -1153,7 +1155,7 @@ input[type="submit"]:active {
     height: 1.8rem;
 }
 
-@media(max-width: 1080px) {
+@media (max-width: 980px) {
     .contact-form {
         flex-direction: column;
         align-items: center;
@@ -1266,7 +1268,7 @@ input[type="submit"]:active {
     border: 0.2rem solid black;
 }
 
-@media(max-width: 1080px) {
+@media (max-width: 980px) {
     .location {
         width: 80vw;
         height: 50vw;
