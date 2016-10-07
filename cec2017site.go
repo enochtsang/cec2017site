@@ -27,6 +27,7 @@ func check(err error, exit bool) {
         defer func() {
             if r := recover(); r != nil {
                 log.Critical(r)
+                panic(err)
                 os.Exit(1)
             }
         }()
@@ -97,10 +98,9 @@ func main() {
     http.HandleFunc("/home/hotel", func(w http.ResponseWriter, r *http.Request) {
         homeHotel(w, r, loadHomeHotelData("en"))
     })
-    http.HandleFunc("/competitions", competitions)
-    // http.HandleFunc("/competitions", func(w http.ResponseWriter, r *http.Request) {
-    //     competitions(w, r, loadCompetitionsData("en"))
-    // })
+    http.HandleFunc("/competitions", func(w http.ResponseWriter, r *http.Request) {
+        competitions(w, r, loadCompetitionsData("en"))
+    })
     http.HandleFunc("/sponsors", sponsors)
     // http.HandleFunc("/sponsors", func(w http.ResponseWriter, r *http.Request) {
     //     sponsors(w, r, loadSponsorsData("en"))
