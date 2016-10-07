@@ -1,35 +1,29 @@
 {{define "content"}}
 <div class="home">
     <div class="home-splash content-splash flex">
-        <h3>Calgary, AB</h3>
-        <h1>CEC 2017</h1>
+        <h3>{{.Location}}</h3>
+        <h1>{{.Title}}</h1>
         <img src="/resources/images/themegraphic-white.png" alt="Theme Graphic" />
-        <h2>June 7 2017 - June 13 2017</h2>
-        <h2>University of Calgary</h2>
+        <h2>{{.Date}}</h2>
+        <h2>{{.School}}</h2>
     </div>
     <div class="content-info flex">
         <div>
-            <h2>ABOUT</h2>
+            <h2>{{.About}}</h2>
             <p>
-                Hey you can find out more about this stuff.
-                Blah blah blah.
-                We can put something fun here.
+                {{.AboutBlurb}}
             </p>
         </div>
         <div>
-            <h2>SPONSORSHIP</h2>
+            <h2>{{.Sponsorship}}</h2>
             <p>
-                Please be our sponsor.
-                Seriously we're begging you.
-                Some links to sponsorship stuff.
+                {{.SponsorshipBlurb}}
             </p>
         </div>
         <div>
-            <h2>REGISTRATION</h2>
+            <h2>{{.Registration}}</h2>
             <p>
-                It'll be fun to register.
-                Seriously come register.
-                Here's some links to register and stuff.
+                {{.RegistrationBlurb}}
             </p>
         </div>
     </div>

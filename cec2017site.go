@@ -82,17 +82,45 @@ func main() {
 
     //Initialize loggers
     http.HandleFunc("/", redirectToHome)
-    http.HandleFunc("/home", home)
-    http.HandleFunc("/home/committee", home_committee)
-    http.HandleFunc("/home/uofc", home_uofc)
-    http.HandleFunc("/home/calgary", home_calgary)
-    http.HandleFunc("/home/hotel", home_hotel)
+    http.HandleFunc("/home", func(w http.ResponseWriter, r *http.Request) {
+        home(w, r, loadHomeData("en"))
+    })
+    http.HandleFunc("/home/committee", func(w http.ResponseWriter, r *http.Request) {
+        homeCommittee(w, r, loadHomeCommitteeData("en"))
+    })
+    http.HandleFunc("/home/uofc", func(w http.ResponseWriter, r *http.Request) {
+        homeUofC(w, r, loadHomeUofCData("en"))
+    })
+    http.HandleFunc("/home/calgary", func(w http.ResponseWriter, r *http.Request) {
+        homeCalgary(w, r, loadHomeCalgaryData("en"))
+    })
+    http.HandleFunc("/home/hotel", func(w http.ResponseWriter, r *http.Request) {
+        homeHotel(w, r, loadHomeHotelData("en"))
+    })
     http.HandleFunc("/competitions", competitions)
+    // http.HandleFunc("/competitions", func(w http.ResponseWriter, r *http.Request) {
+    //     competitions(w, r, loadCompetitionsData("en"))
+    // })
     http.HandleFunc("/sponsors", sponsors)
-    http.HandleFunc("/sponsors/package", sponsors_package)
+    // http.HandleFunc("/sponsors", func(w http.ResponseWriter, r *http.Request) {
+    //     sponsors(w, r, loadSponsorsData("en"))
+    // })
+    http.HandleFunc("/sponsors/package", sponsorsPackage)
+    // http.HandleFunc("/sponsors/package", func(w http.ResponseWriter, r *http.Request) {
+    //     sponsorsPackage(w, r, loadSponsorsPackageData("en"))
+    // })
     http.HandleFunc("/attending", attending)
+    // http.HandleFunc("/attending", func(w http.ResponseWriter, r *http.Request) {
+    //     attending(w, r, loadAttendingData("en"))
+    // })
     http.HandleFunc("/contact", contact)
-    http.HandleFunc("/contact/faq", contact_faq)
+    // http.HandleFunc("/contact", func(w http.ResponseWriter, r *http.Request) {
+    //     contact(w, r, loadContactData("en"))
+    // })
+    http.HandleFunc("/contact/faq", contactFaq)
+    // http.HandleFunc("/contact/faq", func(w http.ResponseWriter, r *http.Request) {
+    //     contactFaq(w, r, loadContactFaqData("en"))
+    // })
     http.Handle("/resources/", http.StripPrefix("/resources/", http.FileServer(http.Dir(absPath("resources")))))
     http.HandleFunc("/favicon.ico", faviconHandler)
 

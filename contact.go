@@ -68,7 +68,7 @@ func contact(w http.ResponseWriter, r *http.Request) {
     }
 }
 
-func contact_faq(w http.ResponseWriter, r *http.Request) {
+func contactFaq(w http.ResponseWriter, r *http.Request) {
     log.Debug("Loading FAQ page for " + r.RemoteAddr)
     t := template.Must(template.ParseFiles(
         absPath("templates/base.html"),
