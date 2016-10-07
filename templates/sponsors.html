@@ -1,39 +1,39 @@
 {{define "content"}}
 <div class="sponsors">
     <div class="lead-sponsors sponsors-container content-splash flex">
-        <h1>LEAD SPONSORS</h1>
+        <h1>{{.Lead}}</h1>
         <div class="flex">
-            <img src="/resources/images/sponsors/lead/chevron.png" alt="Chevron" />
-            <img src="/resources/images/sponsors/lead/dial.png" alt="Dial" />
-            <img src="/resources/images/sponsors/lead/shell.png" alt="Shell" />
+            {{range .LeadSponsors}}
+            <img src="{{.ImgPath}}" alt="{{.Name}}" />
+            {{end}}
         </div>
     </div>
     <div class="gold-sponsors sponsors-container flex">
-        <h1>GOLD SPONSORS</h1>
+        <h1>{{.Gold}}</h1>
         <hr>
         <div class="flex">
-            <img src="/resources/images/sponsors/gold/cloudian.png" alt="Cloudian" />
-            <img src="/resources/images/sponsors/gold/mohawk.png" alt="Mohawk" />
-            <img src="/resources/images/sponsors/gold/statoil.png" alt="Stat Oil" />
+            {{range .GoldSponsors}}
+            <img src="{{.ImgPath}}" alt="{{.Name}}" />
+            {{end}}
         </div>
     </div>
     <div class="silver-sponsors sponsors-container flex">
-        <h1>SILVER SPONSORS</h1>
+        <h1>{{.Silver}}</h1>
         <hr>
         <div class="flex">
-            <img src="/resources/images/sponsors/silver/asus.png" alt="ASUS" />
-            <img src="/resources/images/sponsors/silver/conocophillips.png" alt="Conoco Phillips" />
-            <img src="/resources/images/sponsors/silver/csi.png" alt="CSI" />
+            {{range .SilverSponsors}}
+            <img src="{{.ImgPath}}" alt="{{.Name}}" />
+            {{end}}
         </div>
     </div>
     <div class="bronze-sponsors sponsors-container flex">
-        <h1>BRONZE SPONSORS</h1>
+        <h1>{{.Bronze}}</h1>
         <hr>
         <div class="flex">
-            <img src="/resources/images/sponsors/bronze/mcdonalds.png" alt="McDonalds" />
-            <h2>Mcdonalds</h2>
-            <img src="/resources/images/sponsors/bronze/husky.png" alt="Husky" />
-            <h2>Husky Energy</h2>
+            {{range .BronzeSponsors}}
+            <img src="{{.ImgPath}}" alt="{{.Name}}" />
+            <h2>{{.Name}}</h2>
+            {{end}}
         </div>
     </div>
 </div>

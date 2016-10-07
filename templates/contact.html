@@ -4,35 +4,29 @@
 <div class="contact-splash content-splash flex">
     <div class="splash-info">
         <p>
-            Some shit about happy to hear from you.
-            blah blah blah.
-            Have you checked out the <a href="/contact/faq">FAQ</a>?
-            Use the contact form.
-            The quick brown fox jumps over the lazy dog.
-            The quick brown fox jumps over the lazy dog.
-            The quick brown fox jumps over the lazy dog.
+            {{.Blurb}}
         </p>
     </div>
 </div>
 <div class="contact-content flex">
     <form class="contact-form" autocomplete="off">
         <div class="contact-left">
-            <input type="text" name="name" placeholder="Name">
-            <input type="text" name="organization" placeholder="School or Organization">
-            <input type="email" name="return-email" placeholder="Email">
+            <input type="text" name="name" placeholder="{{.NameLabel}}">
+            <input type="text" name="organization" placeholder="{{.SchoolLabel}}">
+            <input type="email" name="return-email" placeholder="{{.EmailLabel}}">
             <div class="g-recaptcha" data-sitekey="6Lce7SYTAAAAAIrX7phaDRlvkkJDzmzHWcGhS1GN"></div>
             <input type="text" name="LeaveBlank" placeholder="LeaveBlank" style="position: absolute; top: 0; cursor: default; z-index: -5; width: 1vw"> <!-- Honeypot for spam -->
         </div>
         <div class="contact-right">
-            <textarea name="message" cols=50 placeholder="Message"></textarea>
+            <textarea name="message" cols=50 placeholder="{{.MessageLabel}}"></textarea>
             <div class="submit-area">
                 <p class="contact-error"></p>
-                <input type="submit" name="Submit" value="Submit">
+                <input type="submit" name="Submit" value="{{.SubmitLabel}}">
             </div>
         </div>
     </form>
     <div class="contact-sent">
-        Thanks for contacting us, we'll get back to you soon!
+        {{.ThankYou}}
     </div>
 </div>
 {{end}}

@@ -2,32 +2,26 @@
 <script type="text/javascript" src="/resources/lib/pdfobject.min.js"></script>
 <script type="text/javascript" src="/resources/js/attending.js"></script>
 <div class="attending">
-    <h1>ATTENDING</h1>
+    <h1>{{.Title}}</h1>
     <p>
-        This is a blurb about the attending.
-        The quick brown fox jumps over the lazy dog.
-        The quick brown fox jumps over the lazy dog.
-        The quick brown fox jumps over the lazy dog.
-        The quick brown fox jumps over the lazy dog.
-        The quick brown fox jumps over the lazy dog.
-        The quick brown fox jumps over the lazy dog.
+        {{.Blurb}}
     </p>
-    <h2 class="download-title">DOWNLOADS</h2>
+    <h2 class="download-title">{{.DownloadLabel}}</h2>
     <h2 class="delegate-package-label pdf-label">
         <img src="/resources/images/placeholders/arrow-placeholder.png" alt="arrow" class="dropdown-arrow"/>
-        Delegate Package
+        {{.DelegateLabel}}
     </h2>
     <div id="delegate-package-pdf"></div>
-    <script>PDFObject.embed("/resources/hosted-files/placeholder.pdf", "#delegate-package-pdf");</script>
+    <script>PDFObject.embed("{{.DelegatePdf}}", "#delegate-package-pdf");</script>
 
     <h2 class="official-rulebook-label pdf-label">
         <img src="/resources/images/placeholders/arrow-placeholder.png" alt="arrow" class="dropdown-arrow"/>
-        Official Rulebook
+        {{.RulebookLabel}}
     </h2>
     <div id="official-rulebook-pdf"></div>
-    <script>PDFObject.embed("/resources/hosted-files/placeholder.pdf", "#official-rulebook-pdf");</script>
+    <script>PDFObject.embed("{{.RulebookPdf}}", "#official-rulebook-pdf");</script>
     <!-- Mobile only below -->
-    <a class="delegate-package-label-mobile" href="/resources/hosted-files/placeholder.pdf">Delegate Package</a>
-    <a class="official-rulebook-label-mobile" href="/resources/hosted-files/placeholder.pdf">Official Rulebook</a>
+    <a class="delegate-package-label-mobile" href="{{.DelegatePdf}}">{{.DelegateLabel}}</a>
+    <a class="official-rulebook-label-mobile" href="{{.RulebookPdf}}">{{.RulebookLabel}}</a>
 </div>
 {{end}}

@@ -1,0 +1,31 @@
+---
+lead: "Lead Sponsors"
+leadsponsors:
+  - name: "Chevron"
+    imgpath: "/resources/images/sponsors/lead/chevron.png"
+  - name: "Dial"
+    imgpath: "/resources/images/sponsors/lead/dial.png"
+  - name: "Shell"
+    imgpath: "/resources/images/sponsors/lead/shell.png"
+gold: "Gold Sponsors"
+goldsponsors:  
+  - name: "Cloudian"
+    imgpath: "/resources/images/sponsors/gold/cloudian.png"
+  - name: "Mohawk"
+    imgpath: "/resources/images/sponsors/gold/mohawk.png"
+  - name: "Statoil"
+    imgpath: "/resources/images/sponsors/gold/statoil.png"
+silver: "Silver Sponsors"
+silversponsors:  
+  - name: "Asus"
+    imgpath: "/resources/images/sponsors/silver/asus.png"
+  - name: "ConocoPhillips"
+    imgpath: "/resources/images/sponsors/silver/conocophillips.png"
+  - name: "CSI"
+    imgpath: "/resources/images/sponsors/silver/csi.png"
+bronze: "Bronze Sponsors"
+bronzesponsors:  
+  - name: "McDonalds"
+    imgpath: "/resources/images/sponsors/bronze/mcdonalds.png"
+  - name: "Husky"
+    imgpath: "/resources/images/sponsors/bronze/husky.png"

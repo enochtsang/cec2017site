@@ -3,7 +3,7 @@ package main
 import (
     "bytes"
     "encoding/json"
-    "fmt"
+    "gopkg.in/yaml.v2"
     "html/template"
     "io/ioutil"
     "net/http"
@@ -13,7 +13,7 @@ import (
     "path"
     "path/filepath"
     "strings"
-    // "text/template"
+    textTemplate "text/template"
     "time"
 )
 
@@ -38,7 +38,37 @@ type EmailData struct {
     Message        string
 }
 
-func contact(w http.ResponseWriter, r *http.Request) {
+type ContactData struct {
+    Blurb        string
+    NameLabel    string
+    SchoolLabel  string
+    EmailLabel   string
+    MessageLabel string
+    SubmitLabel  string
+    ThankYou     string
+}
+
+type FAQData struct {
+    Title string
+    FAQs  []FAQ
+}
+
+type FAQ struct {
+    Question string
+    Answer   string
+}
+
+func loadContactData(lang string) ContactData {
+    dataFilePath := path.Join(filepath.Dir(os.Args[0]), "data", lang, "contact.yml")
+    dataFile, err := ioutil.ReadFile(dataFilePath)
+    check(err, true)
+    var data ContactData
+    err = yaml.Unmarshal(dataFile, &data)
+    check(err, true)
+    return data
+}
+
+func contact(w http.ResponseWriter, r *http.Request, data ContactData) {
     if r.Method == "POST" {
         log.Debug("Received contact POST Request from " + r.RemoteAddr)
         contactRequest := make(map[string]string)
@@ -47,7 +77,7 @@ func contact(w http.ResponseWriter, r *http.Request) {
             contactRequest[strings.TrimSpace(k)] = strings.TrimSpace(strings.Join(v, " "))
         }
 
-        fmt.Println("contact request: ", contactRequest)
+        log.Info("contact request: ", contactRequest)
 
         if !checkCaptcha(contactRequest["captcha"]).Success {
             sendMail(contactRequest["name"],
@@ -60,20 +90,30 @@ func contact(w http.ResponseWriter, r *http.Request) {
 
     } else {
         log.Debug("Loading contact page for " + r.RemoteAddr)
-        t := template.Must(template.ParseFiles(
+        t := textTemplate.Must(textTemplate.ParseFiles(
             absPath("templates/base.html"),
             absPath("templates/contact.html")))
-        err := t.ExecuteTemplate(w, "base", nil)
+        err := t.ExecuteTemplate(w, "base", data)
         check(err, true)
     }
 }
 
-func contactFaq(w http.ResponseWriter, r *http.Request) {
+func loadContactFaqData(lang string) FAQData {
+    dataFilePath := path.Join(filepath.Dir(os.Args[0]), "data", lang, "faq.yml")
+    dataFile, err := ioutil.ReadFile(dataFilePath)
+    check(err, true)
+    var data FAQData
+    err = yaml.Unmarshal(dataFile, &data)
+    check(err, true)
+    return data
+}
+
+func contactFaq(w http.ResponseWriter, r *http.Request, data FAQData) {
     log.Debug("Loading FAQ page for " + r.RemoteAddr)
     t := template.Must(template.ParseFiles(
         absPath("templates/base.html"),
         absPath("templates/faq.html")))
-    err := t.ExecuteTemplate(w, "base", nil)
+    err := t.ExecuteTemplate(w, "base", data)
     check(err, true)
 }
 
@@ -81,16 +121,16 @@ func checkCaptcha(response string) (r recaptchaResponse) {
     resp, err := http.PostForm("https://www.google.com/recaptcha/api/siteverify",
         url.Values{"secret": {"6Lce7SYTAAAAAPRGE4pVdTrtAFb6sDSmWnLJzirM"}, "response": {response}})
     if err != nil {
-        fmt.Printf("Post error: %s\n", err)
+        log.Warning("Post error: %s\n", err)
     }
     defer resp.Body.Close()
     body, err := ioutil.ReadAll(resp.Body)
     if err != nil {
-        fmt.Println("Read error: could not read body: %s", err)
+        log.Warning("Read error: could not read body: %s", err)
     }
     err = json.Unmarshal(body, &r)
     if err != nil {
-        fmt.Println("Read error: got invalid JSON: %s", err)
+        log.Warning("Read error: got invalid JSON: %s", err)
     }
     return
 }

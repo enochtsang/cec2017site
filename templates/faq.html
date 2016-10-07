@@ -1,15 +1,9 @@
 {{define "content"}}
 <div class="faq">
-    <h1>FAQ</h1>
-    <h2>Why is nothing working?</h2>
-    <p>Well that's because of something something</p>
-    <h2>Why is nothing working?</h2>
-    <p>Well that's because of something something</p>
-    <h2>Why is nothing working?</h2>
-    <p>Well that's because of something something</p>
-    <h2>Why is nothing working?</h2>
-    <p>Well that's because of something something</p>
-    <h2>Why is nothing working?</h2>
-    <p>Well that's because of something something</p>
+    <h1>{{.Title}}</h1>
+    {{range .FAQs}}
+    <h2>{{.Question}}</h2>
+    <p>{{.Answer}}</p>
+    {{end}}
 </div>
 {{end}}
