@@ -53,6 +53,20 @@ func faviconHandler(w http.ResponseWriter, r *http.Request) {
     http.ServeFile(w, r, absPath("resources/images/favicon.ico"))
 }
 
+func cache(h http.Handler) http.Handler {
+    var cacheHeaders = map[string]string{
+        "Cache-Control": "public, max-age=2592000",
+    }
+
+    fn := func(w http.ResponseWriter, r *http.Request) {
+        for k, v := range cacheHeaders {
+            w.Header().Set(k, v)
+        }
+        h.ServeHTTP(w, r)
+    }
+    return http.HandlerFunc(fn)
+}
+
 func main() {
     configFile, err := ioutil.ReadFile(path.Join(filepath.Dir(os.Args[0]), "config.yml"))
     check(err, true)
@@ -115,7 +129,7 @@ func main() {
     http.HandleFunc("/contact/faq", func(w http.ResponseWriter, r *http.Request) {
         contactFaq(w, r, loadContactFaqData("en"))
     })
-    http.Handle("/resources/", http.StripPrefix("/resources/", http.FileServer(http.Dir(absPath("resources")))))
+    http.Handle("/resources/", cache(http.StripPrefix("/resources/", http.FileServer(http.Dir(absPath("resources"))))))
     http.HandleFunc("/favicon.ico", faviconHandler)
 
     // Run Site
