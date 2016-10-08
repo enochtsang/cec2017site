@@ -15,11 +15,10 @@ import (
 
 var log = logging.MustGetLogger("gpu-test-controller")
 
+// ConfigInfo from config.yml
 type ConfigInfo struct {
-    Port     int    `yaml:"Port"`
-    CertFile string `yaml:"CertFile"`
-    KeyFile  string `yaml:"KeyFile"`
-    LogFile  string `yaml:"LogFile"`
+    Port    int    `yaml:"Port"`
+    LogFile string `yaml:"LogFile"`
 }
 
 func check(err error, exit bool) {
@@ -134,7 +133,7 @@ func main() {
 
     // Run Site
     log.Notice("CEC 2017 Site running on 8443")
-    err = http.ListenAndServeTLS(":"+strconv.Itoa(config.Port), absPath(config.CertFile), absPath(config.KeyFile), nil)
+    err = http.ListenAndServe(":"+strconv.Itoa(config.Port), nil)
     check(err, true)
     log.Notice("CEC 2017 Site closing")
 }
