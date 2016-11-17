@@ -1,16 +1,17 @@
 {{define "content"}}
 <div class="sponsors">
     <div class="lead-sponsors sponsors-container content-splash flex">
-        <h1>{{.Lead}}</h1>
+        <!-- <h1>{{.Lead}}</h1> -->
+        <h1>Coming soon!</h1>
         <div class="flex">
-<!--             <p>
-                Coming soon!
-            </p>
- -->             {{range .LeadSponsors}}
+            <!--
+            {{range .LeadSponsors}}
             <a href={{.Link}}><img src="{{.ImgPath}}" alt="{{.Name}}" /></a>
             {{end}}
+            -->
         </div>
     </div>
+    <!--
      <div class="gold-sponsors sponsors-container flex">
         <h1>{{.Gold}}</h1>
         <hr>
@@ -39,5 +40,6 @@
             {{end}}
         </div>
     </div>
+    -->
 </div>
 {{end}}
