@@ -24,6 +24,7 @@ type SponsorsData struct {
 type Sponsor struct {
 	Name    string
 	ImgPath string
+	Link    string
 }
 
 type SponsorsPackageData struct {

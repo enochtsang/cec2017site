@@ -1,11 +1,12 @@
 ---
 title: Frequently Asked Questions
 faqs:
-  - question: "Why is nothing working?"
-    answer: "Well that's because of something something"
-  - question: "Why is nothing working?"
-    answer: "Well that's because of something something"
-  - question: "Why is nothing working?"
-    answer: "Well that's because of something something"
-  - question: "Why is nothing working?"
-    answer: "Well that's because of something something"
+  - question: How do I compete in the CEC?
+    answer: In order to compete in the CEC, you have to win at your local engineering competition and place first or second at your regional competition.
+  - question: What are the regional competitions?
+    answer: >
+      The engineering schools in Canada are divided into 4 regions: West, Ontario, Quebec, and Atlantic.
+      West encompasses all schools from BC to Manitoba, and Atlantic encompasses all of the schools to the east of Quebec. 
+      Each region hosts their own regional engineering competition.
+  - question: When is registration?
+    answer: Registration is opening mid January. Stay tuned!

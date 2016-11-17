@@ -33,7 +33,7 @@ type CommitteeMember struct {
 }
 
 type LocationData struct {
-    Blurb          string
+    Blurb          []string
     LocationSource string
 }
 

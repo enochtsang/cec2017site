@@ -5,7 +5,7 @@
     Christine is a 4th Year Geomatics Engineering Student with a Biomedical Engineering Minor on her internship term with a software engineering company, called Calgary Scientific Inc.
     In previous years she has been actively involved in the UofC Engineering Students’ Society and the Geomatics Engineering Students’ Society.
   name: "Christine Cao"
-  picturepath: /resources/images/placeholders/profile-placeholder.png
+  picturepath: /resources/images/committee/christine.jpg
   role: Co-Chair
 - 
   class: kaylyn-schnell
@@ -14,7 +14,7 @@
     Previously Kaylyn has held positions on the University of Calgary Students’ Union and the UofC Engineering Students’ Society.
     She has also been involved in coordinating the FIRST Robotics Western Canada Regional Competition for the past several years.
   name: "Kaylyn Schnell"
-  picturepath: /resources/images/placeholders/profile-placeholder.png
+  picturepath: /resources/images/committee/kaylyn.jpg
   role: Co-Chair
 - 
   class: arsalan-fardi
@@ -22,7 +22,7 @@
     Arsalan is a 4th Year Chemical Engineering Student with a Petroleum Minor currently on his internship term with TransCanada.
     He is an active member of the Chemical Engineering Students’ Society and the Petroleum and Energy Society on campus.
   name: "Arsalan Fardi"
-  picturepath: /resources/images/placeholders/profile-placeholder.png
+  picturepath: /resources/images/committee/arsalan.jpg
   role: "VP Hospitality"
 - 
   class: leah-loeppky
@@ -30,14 +30,14 @@
     Leah is a 3rd Year Mechanical Engineering Student and the current President of the Mechanical Engineering Students’ Society.
     She recently completed a summer work term in Lloydminster, Saskatchewan with Husky Energy.
   name: "Leah Loeppky"
-  picturepath: /resources/images/placeholders/profile-placeholder.png
+  picturepath: /resources/images/committee/leah.jpg
   role: "VP Events"
 - 
   class: cindy-cai
   info: >
     Cindy is a 3rd Year Chemical Engineering Student with a Petroleum Minor and spends her spare time volunteering as an Energy Engineering Instructor for Minds in Motion, helping to engage youth in STEM subjects.
   name: "Cindy Cai"
-  picturepath: /resources/images/placeholders/profile-placeholder.png
+  picturepath: /resources/images/committee/cindy.jpg
   role: "Co-VP Sponsorship"
 - 
   class: manpreet-deol
@@ -46,24 +46,24 @@
     At the University of Calgary she has been involved in the Sikh Students’ Association and the Engineering Students’ Society.
     Manpreet has won a variety of awards and scholarships including a 2015 Schulich Leader of Canada Scholarship and she has been named one of Calgary’s Top 5 Youth to Watch.
   name: "Manpreet Deol"
-  picturepath: /resources/images/placeholders/profile-placeholder.png
+  picturepath: /resources/images/committee/manpreet.jpg
   role: "Co-VP Sponsorship"
 - 
-  class: jenniger-busser
+  class: jennifer-busser
   info: >
     Jenn is a 4th Year Geomatics Engineering Student currently on her internship with NovAtel Inc.
     She has previously been involved in the Geomatics Engineering Students’ Society and the 2015 Alberta Student Energy Conference.
   name: "Jennifer Busser"
-  picturepath: /resources/images/placeholders/profile-placeholder.png
+  picturepath: /resources/images/committee/jennifer.jpg
   role: "VP Translations"
 - 
-  class: justin-olaciregui
+  class: hugo-olaciregui
   info: >
     Hugo is a 4th Year Mechanical Engineering Student on his internship term with Crescent Point Energy.
     He has previously been involved in exchange programs at the Université de Montréal and University of Stuttgart in Germany.
     He is also bilingual, speaking both English and Spanish.
   name: "Hugo Olaciregui"
-  picturepath: /resources/images/placeholders/profile-placeholder.png
+  picturepath: /resources/images/committee/hugo.jpg
   role: "VP Finance"
 - 
   class: matthew-buchko
@@ -72,7 +72,7 @@
     He has previously been involved in the UofC Engineering Students’ Society as the VP External and the Chemical Engineering Students’ Society.
     Originally from Canmore, Matt enjoys escaping to the Rocky Mountains to enjoy hiking and photography.
   name: "Matthew Buchko"
-  picturepath: /resources/images/placeholders/profile-placeholder.png
+  picturepath: /resources/images/committee/matthew.jpg
   role: "VP Logistics"
 - 
   class: jasmine-zhao

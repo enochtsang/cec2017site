@@ -3,11 +3,18 @@
     <img src="/resources/images/uc-crest.png" alt="UofC Crest" />
     <div class="splash-info uc-info">
         <p>
-           {{.Blurb}}
+            {{range .Blurb}}
+               {{.}}<br><br>
+            {{end}}
         </p>
     </div>
 </div>
 <div class="uc-content flex">
+    <p class="mobile-splash-info">
+        {{range .Blurb}}
+           {{.}}<br><br>
+        {{end}}
+    </p>
     {{template "didyouknow"}}
     {{template "location" .}}
 </div>

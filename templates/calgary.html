@@ -3,11 +3,18 @@
     <img src="/resources/images/calgary-crest.png" alt="Calgary Crest" />
     <div class="splash-info calgary-info">
         <p>
-            {{.Blurb}}
+            {{range .Blurb}}
+               {{.}}<br><br>
+            {{end}}
         </p>
     </div>
 </div>
 <div class="calgary-content flex">
+    <p class="mobile-splash-info">
+        {{range .Blurb}}
+           {{.}}<br><br>
+        {{end}}
+    </p>
     {{template "didyouknow"}}
     {{template "location" .}}
 </div>

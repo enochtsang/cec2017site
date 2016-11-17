@@ -3,17 +3,20 @@
     <div class="lead-sponsors sponsors-container content-splash flex">
         <h1>{{.Lead}}</h1>
         <div class="flex">
-            {{range .LeadSponsors}}
-            <img src="{{.ImgPath}}" alt="{{.Name}}" />
+<!--             <p>
+                Coming soon!
+            </p>
+ -->             {{range .LeadSponsors}}
+            <a href={{.Link}}><img src="{{.ImgPath}}" alt="{{.Name}}" /></a>
             {{end}}
         </div>
     </div>
-    <div class="gold-sponsors sponsors-container flex">
+     <div class="gold-sponsors sponsors-container flex">
         <h1>{{.Gold}}</h1>
         <hr>
         <div class="flex">
             {{range .GoldSponsors}}
-            <img src="{{.ImgPath}}" alt="{{.Name}}" />
+            <a href={{.Link}}><img src="{{.ImgPath}}" alt="{{.Name}}" /></a>
             {{end}}
         </div>
     </div>
@@ -22,7 +25,7 @@
         <hr>
         <div class="flex">
             {{range .SilverSponsors}}
-            <img src="{{.ImgPath}}" alt="{{.Name}}" />
+            <a href={{.Link}}><img src="{{.ImgPath}}" alt="{{.Name}}" /></a>
             {{end}}
         </div>
     </div>
@@ -31,7 +34,7 @@
         <hr>
         <div class="flex">
             {{range .BronzeSponsors}}
-            <img src="{{.ImgPath}}" alt="{{.Name}}" />
+            <a href={{.Link}}><img src="{{.ImgPath}}" alt="{{.Name}}" /></a>
             <h2>{{.Name}}</h2>
             {{end}}
         </div>
