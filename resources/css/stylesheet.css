@@ -431,7 +431,12 @@ footer > div > p {
     margin: 1rem;
 }
 
+.home .content-info {
+    align-items: flex-start;
+}
+
 .home .content-info > div {
+    align-items: flex-start;
     margin: 4rem;
     width: 20rem;
 }
