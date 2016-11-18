@@ -139,6 +139,7 @@ h3 {
     -webkit-background-size: cover;
     background-size: cover;
     background-position: center;
+    background-color: black;
 }
 
 .splash-info {
