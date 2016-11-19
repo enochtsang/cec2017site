@@ -232,17 +232,17 @@ header > div {
 
 @media (max-width: 980px) {
     header > div {
-        font-size: 2rem;
+        font-size: 3vw;
     }
 
     .info-bar {
-        padding-top: 0.6rem;
-        padding-bottom: 0.6rem;
+        padding-top: 0.3vw;
+        padding-bottom: 0.3vw;
     }
 
     .header-logo {
-        height: 7rem;
-        width: 7rem;
+        height: 10vw;
+        width: 10vw;
     }
 
     .header-separator {
