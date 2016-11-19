@@ -449,19 +449,19 @@ footer > div > p {
 
 @media (max-width: 980px) {
     .home-splash h1 {
-        font-size: 4.5rem;
+        font-size: 5vh;
     }
 
     .home-splash h2 {
-        font-size: 2.6rem;
+        font-size: 2.2vh;
     }
 
     .home-splash h3 {
-        font-size: 2.3rem;
+        font-size: 2vh;
     }
 
     .home-splash img {
-        height: 12rem;
+        height: 12vh;
     }
 
     .home .content-info {
