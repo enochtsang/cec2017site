@@ -330,7 +330,7 @@ header > div {
 }
 
 .mobile-nav-bar ul {
-    /*display: none;*/
+    display: none;
     list-style-type: none;
     flex-direction: column;
     margin: auto;
@@ -965,7 +965,7 @@ footer > div > p {
     margin: auto;
     margin-top: 2rem;
     padding-bottom: 1rem;
-    min-width: 50rem;
+    min-width: 40rem;
     width: 50%;
 }
 
@@ -986,7 +986,7 @@ footer > div > p {
     display: none;
     font-size: 1.6rem;
     color: #F20;
-    width: 100%;
+    width: 100%; 
     margin: 2rem;
 }
 
@@ -1009,7 +1009,7 @@ footer > div > p {
     text-align: center;
     margin: auto;
     margin-top: 2rem;
-    min-width: 50rem;
+    min-width: 40rem;
     padding-bottom: 1rem;
     width: 50%;
 }
