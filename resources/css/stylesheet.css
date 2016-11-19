@@ -107,6 +107,7 @@ body {
     flex-direction: column;
     font-family: 'Raleway', sans-serif;
     margin: 0 0 3rem;
+    min-width: 40rem;
 }
 
 a, a:visited, a:hover, a:active {
@@ -381,6 +382,7 @@ footer {
     margin-top: auto;
     position: absolute;
     width: 100%;
+    min-width: 40rem;
 
     background: black;
     color: white;
