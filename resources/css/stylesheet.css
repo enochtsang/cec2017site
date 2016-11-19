@@ -329,7 +329,7 @@ header > div {
 }
 
 .mobile-nav-bar ul {
-    display: none;
+    /*display: none;*/
     list-style-type: none;
     flex-direction: column;
     margin: auto;
@@ -337,7 +337,7 @@ header > div {
 }
 
 .mobile-nav-bar li {
-    padding: 0.6rem;
+    padding: 1vh;
     text-align: center;
     font-size: 2vh;
 }
@@ -501,8 +501,8 @@ footer > div > p {
 }
 
 .directors-splash img {
-    height: 18em;
-    width: 18em;
+    height: 18rem;
+    width: 18rem;
     margin-right: 4rem;
     border: 0.5rem solid black;
 }
@@ -578,11 +578,16 @@ footer > div > p {
 }
 
 @media (max-width: 980px) {
+    .director {
+        flex-direction: column;
+    }
+
     .director .splash-info {
         display: block;
     }
 
     .directors-splash {
+        min-width: 30rem;
         padding: 0;
         -moz-background-size: auto 60vh;
         -o-background-size: auto 60vh;
@@ -592,19 +597,23 @@ footer > div > p {
     }
 
     .directors-splash img {
-        margin-left: 1.5em;
+        margin-right: 0;
+        height: 20vh;
+        width: 20vh;
     }
 
     .directors-splash .splash-info {
-        margin-right: 1.5em;
+        margin-top: 1vh;
+        font-size: 20px;
     }
 
     .directors-splash h3 {
-        font-size: 2rem;
+        font-size: 20px;
     }
 
     .director p {
         width: 100%;
+        word-wrap: 
     }
 
     .directors-listing {
@@ -1211,7 +1220,7 @@ input[type="submit"]:active {
 
     input[type="text"], input[type="email"], input[type="submit"], .contact-form textarea {
         width: 100%;
-        font-size: 3vw;
+        font-size: 2rem;
         margin-bottom: 2.5rem;
         text-align: center;
     }
