@@ -107,6 +107,7 @@ body {
     flex-direction: column;
     font-family: 'Raleway', sans-serif;
     margin: 0 0 3rem;
+    min-width: 40rem;
 }
 
 a, a:visited, a:hover, a:active {
@@ -164,10 +165,6 @@ h3 {
 @media (max-width: 980px) {
     .content-splash {
         height: 40vh;
-        -moz-background-size: auto 40vh;
-        -o-background-size: auto 40vh;
-        -webkit-background-size: auto 40vh;
-        background-size: auto 40vh;
     }
 
     .splash-info {
@@ -236,17 +233,17 @@ header > div {
 
 @media (max-width: 980px) {
     header > div {
-        font-size: 2rem;
+        font-size: 3vw;
     }
 
     .info-bar {
-        padding-top: 0.6rem;
-        padding-bottom: 0.6rem;
+        padding-top: 0.3vw;
+        padding-bottom: 0.3vw;
     }
 
     .header-logo {
-        height: 7rem;
-        width: 7rem;
+        height: 10vw;
+        width: 10vw;
     }
 
     .header-separator {
@@ -341,13 +338,13 @@ header > div {
 }
 
 .mobile-nav-bar li {
-    padding: 1rem;
+    padding: 1vh;
     text-align: center;
+    font-size: 2vh;
 }
 
 .mobile-nav-bar a {
     color: white;
-    font-size: 2rem;
 }
 
 .mobile-nav-controller {
@@ -356,11 +353,15 @@ header > div {
     align-items: center;
 }
 
+.mobile-nav-controller:hover {
+    cursor: pointer;
+}
+
 .mobile-nav-controller img {
-    height: 1.5rem;
+    height: 1.2vh;
     margin: auto;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin-top: 0.8vh;
+    margin-bottom: 0.8vh;
 }
 
 @media (max-width: 980px) {
@@ -381,6 +382,7 @@ footer {
     margin-top: auto;
     position: absolute;
     width: 100%;
+    min-width: 40rem;
 
     background: black;
     color: white;
@@ -388,8 +390,8 @@ footer {
 
 @media (max-width: 980px) {
     footer {
-        height: 7rem;
-        font-size: 2em;
+        height: 5vh;
+        font-size: 2vh;
         align-items: center;
         display: flex;
         justify-content: space-around;
@@ -447,19 +449,19 @@ footer > div > p {
 
 @media (max-width: 980px) {
     .home-splash h1 {
-        font-size: 4.5rem;
+        font-size: 5vh;
     }
 
     .home-splash h2 {
-        font-size: 2.6rem;
+        font-size: 2.2vh;
     }
 
     .home-splash h3 {
-        font-size: 2.3rem;
+        font-size: 2vh;
     }
 
     .home-splash img {
-        height: 12rem;
+        height: 12vh;
     }
 
     .home .content-info {
@@ -501,8 +503,8 @@ footer > div > p {
 }
 
 .directors-splash img {
-    height: 18em;
-    width: 18em;
+    height: 18rem;
+    width: 18rem;
     margin-right: 4rem;
     border: 0.5rem solid black;
 }
@@ -578,30 +580,42 @@ footer > div > p {
 }
 
 @media (max-width: 980px) {
+    .director {
+        flex-direction: column;
+    }
+
     .director .splash-info {
         display: block;
     }
 
     .directors-splash {
+        min-width: 30rem;
         padding: 0;
-        min-height: 60vh;
+        -moz-background-size: auto 60vh;
+        -o-background-size: auto 60vh;
+        -webkit-background-size: auto 60vh;
         background-size: auto 60vh;
+        height: 60vh;
     }
 
     .directors-splash img {
-        margin-left: 1.5em;
+        margin-right: 0;
+        height: 20vh;
+        width: 20vh;
     }
 
     .directors-splash .splash-info {
-        margin-right: 1.5em;
+        margin-top: 1vh;
+        font-size: 20px;
     }
 
     .directors-splash h3 {
-        font-size: 2rem;
+        font-size: 20px;
     }
 
     .director p {
         width: 100%;
+        word-wrap: 
     }
 
     .directors-listing {
@@ -834,7 +848,7 @@ footer > div > p {
 
     .competitions-nav ul {
         flex-direction: column;
-        font-size: 2.8rem;
+        font-size: 2vh;
     }
 
     .competitions-nav hr {
@@ -856,12 +870,12 @@ footer > div > p {
     }
 
     .competition-splash h2 {
-        font-size: 4rem;
+        font-size: 4vh;
     }
 
     .competition-blurb {
         padding: 2rem;
-        font-size: 2rem;
+        font-size: 2vh;
         text-align: center;
     }
 }
@@ -951,7 +965,7 @@ footer > div > p {
     margin: auto;
     margin-top: 2rem;
     padding-bottom: 1rem;
-    min-width: 50rem;
+    min-width: 40rem;
     width: 50%;
 }
 
@@ -972,7 +986,7 @@ footer > div > p {
     display: none;
     font-size: 1.6rem;
     color: #F20;
-    width: 100%;
+    width: 100%; 
     margin: 2rem;
 }
 
@@ -995,7 +1009,7 @@ footer > div > p {
     text-align: center;
     margin: auto;
     margin-top: 2rem;
-    min-width: 50rem;
+    min-width: 40rem;
     padding-bottom: 1rem;
     width: 50%;
 }
@@ -1194,7 +1208,7 @@ input[type="submit"]:active {
 @media (max-width: 980px) {
     .contact-splash .splash-info {
         display: block;
-        font-size: 2em;
+        font-size: 3vw;
         margin: 2em;
         text-align: center;
     }
@@ -1208,7 +1222,7 @@ input[type="submit"]:active {
 
     input[type="text"], input[type="email"], input[type="submit"], .contact-form textarea {
         width: 100%;
-        font-size: 3rem;
+        font-size: 2rem;
         margin-bottom: 2.5rem;
         text-align: center;
     }
@@ -1270,7 +1284,7 @@ input[type="submit"]:active {
     margin: auto;
     margin-top: 4rem;
     margin-bottom: 10rem;
-    min-width: 50rem;
+    min-width: 40rem;
     padding-bottom: 1rem;
     text-align: center;
     width: 20%;
