@@ -79,7 +79,7 @@ func contact(w http.ResponseWriter, r *http.Request, data ContactData) {
 
         log.Info("contact request: ", contactRequest)
 
-        if !checkCaptcha(contactRequest["captcha"]).Success {
+        if checkCaptcha(contactRequest["captcha"]).Success {
             sendMail(contactRequest["name"],
                 contactRequest["organization"],
                 contactRequest["returnEmail"],
