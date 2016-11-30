@@ -1,4 +1,5 @@
 $(document).ready(function(){
+
     $(document).on('click', 'input[type=submit]', function() {
         var goodInput = true;
         var inputs = [
@@ -77,3 +78,12 @@ function validateEmail(email) {
     var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(email);
 }
+
+// render google recaptcha
+var onloadCallback = function() {
+    grecaptcha.render('g-recaptcha', {
+        'sitekey' : '6Lce7SYTAAAAAIrX7phaDRlvkkJDzmzHWcGhS1GN',
+        // `data-size`:
+        'data-size' : `compact`
+    });
+};

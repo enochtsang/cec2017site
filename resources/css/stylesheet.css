@@ -1075,6 +1075,7 @@ footer > div > p {
 .contact-splash {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/resources/images/placeholders/contact-backdrop-placeholder.jpg");
     font-size: 1.1rem;
+    text-align: center;
 }
 
 .contact-splash a {
@@ -1221,7 +1222,7 @@ input[type="submit"]:active {
 
     input[type="text"], input[type="email"], input[type="submit"], .contact-form textarea {
         width: 100%;
-        font-size: 2rem;
+        font-size: 3vw;
         margin-bottom: 2.5rem;
         text-align: center;
     }
@@ -1236,10 +1237,18 @@ input[type="submit"]:active {
     }
 
     .g-recaptcha {
-        margin: auto;
+        display: inline-block;
         margin-top: 2.5rem;
         margin-bottom: 5rem;
-        transform: scale(2.0);
+
+        transform: scale(1.5);
+        -webkit-transform: scale(1.5);
+    }
+
+    .g-recaptcha-div {
+        margin: auto;
+        width: 456px;
+        text-align: center;
     }
 
     .contact-form textarea {

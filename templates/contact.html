@@ -1,5 +1,4 @@
 {{define "content"}}
-<script src='https://www.google.com/recaptcha/api.js'></script>
 <script type="text/javascript" src="/resources/js/contact.js"></script>
 <div class="contact-splash content-splash flex">
     <div class="splash-info">
@@ -14,7 +13,8 @@
             <input type="text" name="name" placeholder="{{.NameLabel}}">
             <input type="text" name="organization" placeholder="{{.SchoolLabel}}">
             <input type="email" name="return-email" placeholder="{{.EmailLabel}}">
-            <div class="g-recaptcha" data-sitekey="6Lce7SYTAAAAAIrX7phaDRlvkkJDzmzHWcGhS1GN"></div>
+            <div class="g-recaptcha-div"><div id="g-recaptcha" class="g-recaptcha"></div></div>
+            <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
             <input type="text" name="LeaveBlank" placeholder="LeaveBlank" style="position: absolute; top: 0; cursor: default; z-index: -5; width: 1vw"> <!-- Honeypot for spam -->
         </div>
         <div class="contact-right">
