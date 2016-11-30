@@ -138,7 +138,7 @@ func checkCaptcha(response string) (r recaptchaResponse) {
 func sendMail(name, organization, email, body string) {
     context := &EmailData{
         SenderEmail:    "cec2017site@gmail.com",
-        RecipientEmail: "etsang1@hotmail.com",
+        RecipientEmail: "cec2017@cfes.ca",
         Name:           name,
         Organization:   organization,
         ReturnEmail:    email,
