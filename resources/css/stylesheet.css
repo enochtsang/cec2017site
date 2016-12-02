@@ -358,10 +358,10 @@ header > div {
 }
 
 .mobile-nav-controller img {
-    height: 1.2vh;
+    height: 1.5vh;
     margin: auto;
-    margin-top: 0.8vh;
-    margin-bottom: 0.8vh;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
 }
 
 @media (max-width: 980px) {

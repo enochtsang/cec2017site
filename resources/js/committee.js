@@ -1,7 +1,4 @@
 $(document).ready(function(){
-    var currentDirector = "christine-cao";
-    $(".directors-splash ." + currentDirector).css("display", "flex").hide().fadeIn("slow");
-
     $(".directors-mini img").click(function() {
         nextDirector = $(this).attr("class");
         console.log("currentDirector is " + currentDirector);
