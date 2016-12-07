@@ -1,4 +1,6 @@
 $(document).ready(function(){
+	var currentDirector = "christine-cao";
+    
     $(".directors-mini img").click(function() {
         nextDirector = $(this).attr("class");
         console.log("currentDirector is " + currentDirector);
