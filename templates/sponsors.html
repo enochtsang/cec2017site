@@ -1,17 +1,15 @@
 {{define "content"}}
 <div class="sponsors">
-    <div class="lead-sponsors sponsors-container content-splash flex">
-        <!-- <h1>{{.Lead}}</h1> -->
-        <h1>Coming soon!</h1>
-        <div class="flex">
-            <!--
-            {{range .LeadSponsors}}
+    <div class="diamond-sponsors sponsors-container content-splash flex">
+        <h1>{{.Diamond}}</h1>
+<!--         <h1>Coming soon!</h1>
+ -->        <div class="flex">
+            {{range .DiamondSponsors}}
             <a href={{.Link}}><img src="{{.ImgPath}}" alt="{{.Name}}" /></a>
             {{end}}
-            -->
         </div>
     </div>
-    <!--
+    
      <div class="gold-sponsors sponsors-container flex">
         <h1>{{.Gold}}</h1>
         <hr>
@@ -30,6 +28,15 @@
             {{end}}
         </div>
     </div>
+    <div class="breakfast-sponsors sponsors-container flex">
+        <h1>{{.Breakfast}}</h1>
+        <hr>
+        <div class="flex">
+            {{range .BreakfastSponsors}}
+            <a href={{.Link}}><img src="{{.ImgPath}}" alt="{{.Name}}" /></a>
+            {{end}}
+        </div>
+    </div>
     <div class="bronze-sponsors sponsors-container flex">
         <h1>{{.Bronze}}</h1>
         <hr>
@@ -40,6 +47,16 @@
             {{end}}
         </div>
     </div>
-    -->
+    <div class="supporter-sponsors sponsors-container flex">
+        <h1>{{.Supporter}}</h1>
+        <hr>
+        <div class="flex">
+            {{range .SupporterSponsors}}
+            <a href={{.Link}}><img src="{{.ImgPath}}" alt="{{.Name}}" /></a>
+            <h2>{{.Name}}</h2>
+            {{end}}
+        </div>
+    </div>
+    
 </div>
 {{end}}

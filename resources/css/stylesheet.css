@@ -902,18 +902,18 @@ footer > div > p {
     flex-direction: column;
 }
 
-.lead-sponsors {
+.diamond-sponsors {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/resources/images/sponsorship-backdrop.jpg");
     display: flex;
     flex-direction: column;
 }
 
-.lead-sponsors img {
+.diamond-sponsors img {
     height: 10rem;
     margin: 1rem 3rem;
 }
 
-.lead-sponsors h1 {
+.diamond-sponsors h1 {
     font-size: 3rem;
     margin: 5rem;
     margin-top: 0;
@@ -929,12 +929,28 @@ footer > div > p {
     margin: 1rem;
 }
 
+.breakfast-sponsors img {
+    height: 3rem;
+    margin: 1rem;
+}
+
 .bronze-sponsors {
     font-size: 0.8rem;
     margin-bottom: 8rem;
 }
 
 .bronze-sponsors img {
+    height: 1rem;
+    margin: 0.3rem;
+    margin-left: 4rem;
+}
+
+.supporter-sponsors {
+    font-size: 0.8rem;
+    margin-bottom: 8rem;
+}
+
+.supporter-sponsors img {
     height: 1rem;
     margin: 0.3rem;
     margin-left: 4rem;

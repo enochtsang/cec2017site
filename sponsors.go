@@ -11,14 +11,18 @@ import (
 )
 
 type SponsorsData struct {
-	Lead           string
-	LeadSponsors   []Sponsor
+	Diamond           string
+	DiamondSponsors   []Sponsor
 	Gold           string
 	GoldSponsors   []Sponsor
 	Silver         string
 	SilverSponsors []Sponsor
+	Breakfast         string
+	BreakfastSponsors []Sponsor
 	Bronze         string
 	BronzeSponsors []Sponsor
+	Supporter         string
+	SupporterSponsors []Sponsor
 }
 
 type Sponsor struct {
