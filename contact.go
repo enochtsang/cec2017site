@@ -159,7 +159,7 @@ func sendMail(name, organization, email, body string) {
 
     auth := smtp.PlainAuth("",
         context.SenderEmail,
-        "fMNNAKH9YofCVH%d0^",
+        "fakepassword",
         "smtp.gmail.com",
     )
 
